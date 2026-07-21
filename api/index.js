@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const API_KEY = process.env.SELLAUTH_API_KEY || "5958339|t9t98TBgnDnQRwzum9isUh009z50k1f2V8TkbF3b53d7f562";
+const API_KEY = process.env.SELLAUTH_API_KEY || "5949675|V9MHzw3p1eegHlQ5DdLAF5kOF4aQGtHeHcGAxHwk0f93ec25";
 const SHOP_ID = process.env.SELLAUTH_SHOP_ID || "223549";
 
 // Map URL path slugs to SellAuth product path strings
@@ -58,10 +58,10 @@ function fetchProductsFromSellAuth(callback) {
 
   const options = {
     hostname: 'api.sellauth.com',
-    path: `/v1/shops/${223549}/products`,
+    path: `/v1/shops/${SHOP_ID}/products`,
     method: 'GET',
     headers: {
-      'Authorization': `Bearer ${"5958339|t9t98TBgnDnQRwzum9isUh009z50k1f2V8TkbF3b53d7f562"}`,
+      'Authorization': `Bearer ${API_KEY}`,
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
