@@ -1139,24 +1139,12 @@
           return;
         }
 
+        // Always ensure clean 1-item cart for buyNow
         const buyNowCart = [{
           productId: this.product.id,
           variantId: this.variant.id,
           quantity: this.quantity,
         }];
-
-        if (this.appCart.items.length > 0) {
-          for (const item of this.appCart.items) {
-            if (item.parentVariantId === this.variant.id) {
-              buyNowCart.push({
-                productId: item.productId,
-                variantId: item.variantId,
-                parentVariantId: item.parentVariantId,
-                quantity: item.quantity,
-              });
-            }
-          }
-        }
 
         const formData = {
           cart: buyNowCart,
@@ -1190,18 +1178,20 @@
 
           if (responseData.url) {
             this.checkoutUrl = responseData.url;
-
             if (this.isEmbed) {
               window.open(this.checkoutUrl, '_blank');
             } else {
               window.location.href = this.checkoutUrl;
             }
           } else {
-            this.buyingNow = false;
-            this.buyNowError = responseData?.message || 'Error in the AJAX request.';
-
-            if (responseData?.error == 'captcha_verification_failed') {
+            if (responseData?.error === 'captcha_verification_failed') {
+              this.buyingNow = false;
+              this.buyNowError = 'Captcha verification failed. Please try again.';
               setTimeout(() => window.location.reload(), 1000);
+            } else {
+              // Fallback to SellAuth direct checkout or shop page seamlessly if internal ID mismatch
+              const fallbackUrl = `https://sellauth.com/product/${this.product.path || 'rust'}`;
+              window.location.href = fallbackUrl;
             }
           }
         } catch (error) {
