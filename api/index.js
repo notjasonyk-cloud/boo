@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const API_KEY = process.env.SELLAUTH_API_KEY || "5949675|V9MHzw3p1eegHlQ5DdLAF5kOF4aQGtHeHcGAxHwk0f93ec25";
+const API_KEY = process.env.SELLAUTH_API_KEY || "5959307|3C5nX16iKAnZWTam7Mo3Q6o20GapFtnyLwEHtjfY71a1fd57";
 const SHOP_ID = process.env.SELLAUTH_SHOP_ID || "223549";
 
 // Map URL path slugs to SellAuth product path strings
@@ -49,18 +49,18 @@ const PRODUCT_ASSETS = {
 
 const FALLBACK_PRODUCTS = [
   {
-    "id": 774973,
+    "id": 740833,
     "path": "rust",
     "name": "Rust Cheat",
     "currency": "USD",
     "salt": "rust-salt-001",
-    "group_id": 64673,
+    "group_id": 102718,
     "products_sold": 1420,
     "created_at": "2026-06-30T04:09:09.000000Z",
     "description": "Rust Cheat - Aimbot, ESP, Wallhack & More",
     "variants": [
       {
-        "id": 101,
+        "id": 1210815,
         "name": "1 Day key",
         "price": "7.49",
         "stock": -1,
@@ -68,7 +68,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 102,
+        "id": 1210816,
         "name": "7 Day Key",
         "price": "29.99",
         "stock": -1,
@@ -76,7 +76,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 103,
+        "id": 1210817,
         "name": "30 Day Key",
         "price": "59.99",
         "stock": -1,
@@ -86,18 +86,18 @@ const FALLBACK_PRODUCTS = [
     ]
   },
   {
-    "id": 774974,
+    "id": 651369,
     "path": "rainbow-six-siege",
     "name": "Rainbow Six Siege",
     "currency": "USD",
     "salt": "r6-salt-002",
-    "group_id": 62266,
+    "group_id": 92904,
     "products_sold": 980,
     "created_at": "2026-06-30T04:09:09.000000Z",
     "description": "Rainbow Six Siege Cheat - Silent Aim, ESP, Chams & More",
     "variants": [
       {
-        "id": 201,
+        "id": 1026675,
         "name": "1 Day key",
         "price": "7.49",
         "stock": -1,
@@ -105,7 +105,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 202,
+        "id": 1026676,
         "name": "7 Day Key",
         "price": "29.99",
         "stock": -1,
@@ -113,7 +113,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 203,
+        "id": 1026677,
         "name": "30 Day Key",
         "price": "59.99",
         "stock": -1,
@@ -123,18 +123,18 @@ const FALLBACK_PRODUCTS = [
     ]
   },
   {
-    "id": 774975,
+    "id": 651363,
     "path": "apex-legends",
     "name": "Apex Legends",
     "currency": "USD",
     "salt": "apex-salt-003",
-    "group_id": 71187,
+    "group_id": 92905,
     "products_sold": 850,
     "created_at": "2026-06-30T04:09:09.000000Z",
     "description": "Apex Legends Cheat - Custom Aimbot, Glow ESP & Loot Filter",
     "variants": [
       {
-        "id": 301,
+        "id": 1026646,
         "name": "1 Day key",
         "price": "7.49",
         "stock": -1,
@@ -142,7 +142,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 302,
+        "id": 1026647,
         "name": "7 Day Key",
         "price": "29.99",
         "stock": -1,
@@ -150,7 +150,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 303,
+        "id": 1026648,
         "name": "30 Day Key",
         "price": "59.99",
         "stock": -1,
@@ -160,18 +160,18 @@ const FALLBACK_PRODUCTS = [
     ]
   },
   {
-    "id": 774976,
+    "id": 651348,
     "path": "arc-raiders",
     "name": "Arc Raiders",
     "currency": "USD",
     "salt": "arc-salt-004",
-    "group_id": 82010,
+    "group_id": 92901,
     "products_sold": 610,
     "created_at": "2026-06-30T04:09:09.000000Z",
     "description": "Arc Raiders Cheat - Vector Aimbot, Raider & Machine ESP",
     "variants": [
       {
-        "id": 401,
+        "id": 1026616,
         "name": "1 Day key",
         "price": "7.49",
         "stock": -1,
@@ -179,7 +179,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 402,
+        "id": 1026632,
         "name": "7 Day Key",
         "price": "29.99",
         "stock": -1,
@@ -187,7 +187,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 403,
+        "id": 1026633,
         "name": "30 Day Key",
         "price": "59.99",
         "stock": -1,
@@ -197,18 +197,18 @@ const FALLBACK_PRODUCTS = [
     ]
   },
   {
-    "id": 774977,
+    "id": 740821,
     "path": "fortnite-private",
     "name": "Fortnite Private",
     "currency": "USD",
     "salt": "fortnite-salt-005",
-    "group_id": 64534,
+    "group_id": 102708,
     "products_sold": 2100,
     "created_at": "2026-06-30T04:09:09.000000Z",
     "description": "Fortnite Private Cheat - Silent Aim, 3D Box ESP & Vehicle ESP",
     "variants": [
       {
-        "id": 501,
+        "id": 1210784,
         "name": "1 Day key",
         "price": "7.49",
         "stock": -1,
@@ -216,7 +216,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 502,
+        "id": 1210785,
         "name": "7 Day Key",
         "price": "29.99",
         "stock": -1,
@@ -224,7 +224,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 503,
+        "id": 1210786,
         "name": "30 Day Key",
         "price": "59.99",
         "stock": -1,
@@ -232,7 +232,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 504,
+        "id": 1360871,
         "name": "Lifetime",
         "price": "299.99",
         "stock": -1,
@@ -242,18 +242,18 @@ const FALLBACK_PRODUCTS = [
     ]
   },
   {
-    "id": 774978,
+    "id": 740827,
     "path": "delta-force",
     "name": "Delta Force",
     "currency": "USD",
     "salt": "delta-salt-006",
-    "group_id": 91022,
+    "group_id": 102717,
     "products_sold": 430,
     "created_at": "2026-06-30T04:09:09.000000Z",
     "description": "Delta Force Cheat - Silent Aim, Skeleton ESP & Recoil Bypass",
     "variants": [
       {
-        "id": 601,
+        "id": 1210803,
         "name": "1 Day key",
         "price": "7.49",
         "stock": -1,
@@ -261,7 +261,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 602,
+        "id": 1210804,
         "name": "7 Day Key",
         "price": "29.99",
         "stock": -1,
@@ -269,7 +269,7 @@ const FALLBACK_PRODUCTS = [
         "quantity_max": 100
       },
       {
-        "id": 603,
+        "id": 1210805,
         "name": "30 Day Key",
         "price": "59.99",
         "stock": -1,
@@ -279,26 +279,26 @@ const FALLBACK_PRODUCTS = [
     ]
   },
   {
-    "id": 774979,
+    "id": 740845,
     "path": "hwid-spoofer",
     "name": "HWID Spoofer",
     "currency": "USD",
     "salt": "woofer-salt-007",
-    "group_id": 95100,
+    "group_id": 102720,
     "products_sold": 1890,
     "created_at": "2026-06-30T04:09:09.000000Z",
     "description": "HWID Spoofer - Ring0 Kernel Driver, Automated Spoofing",
     "variants": [
       {
-        "id": 701,
-        "name": "1 time",
+        "id": 1210839,
+        "name": "1 Time",
         "price": "29.99",
         "stock": -1,
         "quantity_min": 1,
         "quantity_max": 100
       },
       {
-        "id": 702,
+        "id": 1210842,
         "name": "Lifetime",
         "price": "99.99",
         "stock": -1,
