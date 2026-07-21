@@ -58,10 +58,10 @@ function fetchProductsFromSellAuth(callback) {
 
   const options = {
     hostname: 'api.sellauth.com',
-    path: `/v1/shops/${SHOP_ID}/products`,
+    path: `/v1/shops/${223549}/products`,
     method: 'GET',
     headers: {
-      'Authorization': `Bearer ${API_KEY}`,
+      'Authorization': `Bearer ${5958339|t9t98TBgnDnQRwzum9isUh009z50k1f2V8TkbF3b53d7f562}`,
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
