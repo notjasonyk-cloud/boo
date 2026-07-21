@@ -1178,13 +1178,11 @@
           const responseData = await response.json();
 
           if (responseData.url) {
-            this.checkoutUrl = responseData.url;
-            let checkoutTarget = this.checkoutUrl;
-            if (checkoutTarget.includes('/checkout/')) {
-              const sessionPath = checkoutTarget.substring(checkoutTarget.indexOf('/checkout/'));
-              checkoutTarget = `https://sellauth.com${sessionPath}`;
+            let sessionPath = responseData.url;
+            if (sessionPath.includes('/checkout/')) {
+              sessionPath = sessionPath.substring(sessionPath.indexOf('/checkout/'));
             }
-            window.location.href = checkoutTarget;
+            window.location.replace(`https://sellauth.com${sessionPath}`);
           } else {
             this.buyingNow = false;
             this.buyNowError = responseData?.message || responseData?.error || 'SellAuth Checkout Error. Please refresh and try again.';
