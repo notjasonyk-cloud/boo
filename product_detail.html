@@ -1179,7 +1179,15 @@
 
           if (responseData.url) {
             this.checkoutUrl = responseData.url;
-            window.location.href = this.checkoutUrl;
+            let checkoutTarget = this.checkoutUrl;
+            if (checkoutTarget.includes('riftcheats.com/checkout/')) {
+              const invoiceId = checkoutTarget.split('/checkout/')[1];
+              checkoutTarget = `https://checkout.sellauth.com/invoice/${invoiceId}`;
+            } else if (checkoutTarget.startsWith('/checkout/')) {
+              const invoiceId = checkoutTarget.replace('/checkout/', '');
+              checkoutTarget = `https://checkout.sellauth.com/invoice/${invoiceId}`;
+            }
+            window.location.href = checkoutTarget;
           } else {
             this.buyingNow = false;
             this.buyNowError = responseData?.message || responseData?.error || 'SellAuth Checkout Error. Please refresh and try again.';
