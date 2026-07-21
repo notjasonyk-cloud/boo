@@ -1178,20 +1178,12 @@
 
           if (responseData.url) {
             this.checkoutUrl = responseData.url;
-            if (this.isEmbed) {
-              window.open(this.checkoutUrl, '_blank');
-            } else {
-              window.location.href = this.checkoutUrl;
-            }
+            window.location.href = this.checkoutUrl;
           } else {
+            this.buyingNow = false;
+            this.buyNowError = responseData?.message || responseData?.error || 'SellAuth Checkout Error. Please refresh and try again.';
             if (responseData?.error === 'captcha_verification_failed') {
-              this.buyingNow = false;
-              this.buyNowError = 'Captcha verification failed. Please try again.';
               setTimeout(() => window.location.reload(), 1000);
-            } else {
-              // Fallback to SellAuth direct checkout or shop page seamlessly if internal ID mismatch
-              const fallbackUrl = `https://sellauth.store/shop/223549`;
-              window.location.href = fallbackUrl;
             }
           }
         } catch (error) {
