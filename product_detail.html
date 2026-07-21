@@ -596,7 +596,7 @@
                   x-transition:leave-start="opacity-100"
                   x-transition:leave-end="opacity-0"
                 >
-                  <!-- ALTCHA Widget Hidden -->
+                  <altcha-widget challengeurl="https://api-internal-3.sellauth.com/v1/altcha?shop_id=223549" auto="onload" hidefooter="true" hidelogo="true" x-ref="altcha"></altcha-widget>
                 </div>
               
 
@@ -1077,7 +1077,7 @@
         if (!this.$refs || !this.$refs.altcha) return;
         this.$refs.altcha.addEventListener('statechange', (event) => {
           if (event.detail.state === 'verifying') {
-            this.buyNowDisabled = true;
+            this.buyNowDisabled = false;
           } else if (event.detail.state === 'verified') {
             this.buyNowDisabled = false;
             this.altchaPayload = event.detail.payload;
