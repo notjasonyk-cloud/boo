@@ -507,88 +507,26 @@
               
                 
                   <div class="grid grid-cols-2 lg:grid-cols-3 gap-3">
-                    
+                    <template x-for="(variant, idx) in product.variants" :key="idx">
                       <button
                         type="button"
                         class="text-left p-4 rounded-xl border bg-white/5 transition-colors duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
-                        :class="activeVariant == 0 ? 'border-accent-500 bg-accent-500/10 ' : 'border-white/5 hover:bg-white/5 hover:border-white/10'"
-                        @click="() => activeVariant = 0"
-                        
-                        
+                        :class="activeVariant == idx ? 'border-accent-500 bg-accent-500/10' : 'border-white/5 hover:bg-white/5 hover:border-white/10'"
+                        @click="activeVariant = idx"
                       >
-                        <p class="text-sm font-semibold text-t-primary mb-1 leading-tight">1 Day key</p>
+                        <p class="text-sm font-semibold text-t-primary mb-1 leading-tight" x-text="variant.name"></p>
                         <p class="text-xs mb-2">
-                          
-                            <span class="inline-flex items-center gap-1 text-accent-500 font-medium">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="currentColor" viewBox="0 0 256 256"><path d="M248,128a56,56,0,0,1-95.6,39.6l-.33-.35L92.12,99.55a40,40,0,1,0,0,56.9l8.52-9.62a8,8,0,1,1,12,10.61l-8.69,9.81-.33.35a56,56,0,1,1,0-79.2l.33.35,59.95,67.7a40,40,0,1,0,0-56.9l-8.52,9.62a8,8,0,1,1-12-10.61l8.69-9.81.33-.35A56,56,0,0,1,248,128Z"/></svg>
-                              Unlimited
-                            </span>
-                          
-                        </p>
-                        
-                        <div class="flex items-baseline gap-2">
-                          <span class="text-xl font-bold text-t-primary" x-text="appCurrency.format(8.00, 'USD')">
-                            $8.00
+                          <span class="inline-flex items-center gap-1 text-accent-500 font-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="currentColor" viewBox="0 0 256 256"><path d="M248,128a56,56,0,0,1-95.6,39.6l-.33-.35L92.12,99.55a40,40,0,1,0,0,56.9l8.52-9.62a8,8,0,1,1,12,10.61l-8.69,9.81-.33.35a56,56,0,1,1,0-79.2l.33.35,59.95,67.7a40,40,0,1,0,0-56.9l-8.52,9.62a8,8,0,1,1-12-10.61l8.69-9.81.33-.35A56,56,0,0,1,248,128Z"/></svg>
+                            Unlimited
                           </span>
-                          
+                        </p>
+                        <div class="flex items-baseline gap-2">
+                          <span class="text-xl font-bold text-t-primary" x-text="appCurrency.format(variant.price, product.currency)"></span>
                         </div>
                       </button>
-                    
-                      <button
-                        type="button"
-                        class="text-left p-4 rounded-xl border bg-white/5 transition-colors duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
-                        :class="activeVariant == 1 ? 'border-accent-500 bg-accent-500/10 ' : 'border-white/5 hover:bg-white/5 hover:border-white/10'"
-                        @click="() => activeVariant = 1"
-                        
-                        
-                      >
-                        <p class="text-sm font-semibold text-t-primary mb-1 leading-tight">7 Day Key</p>
-                        <p class="text-xs mb-2">
-                          
-                            <span class="inline-flex items-center gap-1 text-accent-500 font-medium">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="currentColor" viewBox="0 0 256 256"><path d="M248,128a56,56,0,0,1-95.6,39.6l-.33-.35L92.12,99.55a40,40,0,1,0,0,56.9l8.52-9.62a8,8,0,1,1,12,10.61l-8.69,9.81-.33.35a56,56,0,1,1,0-79.2l.33.35,59.95,67.7a40,40,0,1,0,0-56.9l-8.52,9.62a8,8,0,1,1-12-10.61l8.69-9.81.33-.35A56,56,0,0,1,248,128Z"/></svg>
-                              Unlimited
-                            </span>
-                          
-                        </p>
-                        
-                        <div class="flex items-baseline gap-2">
-                          <span class="text-xl font-bold text-t-primary" x-text="appCurrency.format(30.00, 'USD')">
-                            $30.00
-                          </span>
-                          
-                        </div>
-                      </button>
-                    
-                      <button
-                        type="button"
-                        class="text-left p-4 rounded-xl border bg-white/5 transition-colors duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
-                        :class="activeVariant == 2 ? 'border-accent-500 bg-accent-500/10 ' : 'border-white/5 hover:bg-white/5 hover:border-white/10'"
-                        @click="() => activeVariant = 2"
-                        
-                        
-                      >
-                        <p class="text-sm font-semibold text-t-primary mb-1 leading-tight">30 Day Key</p>
-                        <p class="text-xs mb-2">
-                          
-                            <span class="inline-flex items-center gap-1 text-accent-500 font-medium">
-                              <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5" fill="currentColor" viewBox="0 0 256 256"><path d="M248,128a56,56,0,0,1-95.6,39.6l-.33-.35L92.12,99.55a40,40,0,1,0,0,56.9l8.52-9.62a8,8,0,1,1,12,10.61l-8.69,9.81-.33.35a56,56,0,1,1,0-79.2l.33.35,59.95,67.7a40,40,0,1,0,0-56.9l-8.52,9.62a8,8,0,1,1-12-10.61l8.69-9.81.33-.35A56,56,0,0,1,248,128Z"/></svg>
-                              Unlimited
-                            </span>
-                          
-                        </p>
-                        
-                        <div class="flex items-baseline gap-2">
-                          <span class="text-xl font-bold text-t-primary" x-text="appCurrency.format(60.00, 'USD')">
-                            $60.00
-                          </span>
-                          
-                        </div>
-                      </button>
-                    
-                  </div>
-                
-                <small x-show="!(activeVariant in product.variants)" x-cloak class="text-red-500">
+                    </template>
+                  </div><small x-show="!(activeVariant in product.variants)" x-cloak class="text-red-500">
                   Please select a variant.
                 </small>
               
