@@ -11,10 +11,6 @@
       "dest": "/api/index.js?slug=$slug"
     },
     {
-      "src": "/checkout/(.*)",
-      "dest": "https://sellauth.com/checkout/$1"
-    },
-    {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     },
