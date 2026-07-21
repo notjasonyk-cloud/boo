@@ -1,260 +1,289 @@
 [
   {
-    "id": 740833,
-    "path": "rust",
-    "name": "Rust Cheat",
+    "id": 651348,
+    "name": "Arc Raiders Elite",
+    "description": "",
     "currency": "USD",
-    "salt": "rust-salt-001",
-    "group_id": 102718,
-    "products_sold": 1420,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Rust Cheat - Aimbot, ESP, Wallhack & More",
+    "path": "arc-raiders-elite",
+    "aliases": [
+      "arc-raiders",
+      "arc",
+      "arc-raiders-elite"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944493.webp",
+      "https://api.sellauth.com/storage/images/815724.webp",
+      "https://api.sellauth.com/storage/images/815739.webp"
+    ],
     "variants": [
       {
-        "id": 1210815,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "id": 1026616,
+        "name": "1 Day",
+        "price": 7.95,
+        "stock": -1
       },
       {
-        "id": 1210816,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "id": 1026632,
+        "name": "7 Days",
+        "price": 29.95,
+        "stock": -1
       },
       {
-        "id": 1210817,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 651369,
-    "path": "rainbow-six-siege",
-    "name": "Rainbow Six Siege",
-    "currency": "USD",
-    "salt": "r6-salt-002",
-    "group_id": 92904,
-    "products_sold": 980,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Rainbow Six Siege Cheat - Silent Aim, ESP, Chams & More",
-    "variants": [
-      {
-        "id": 1026675,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026676,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026677,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "id": 1026633,
+        "name": "30 Days",
+        "price": 54.95,
+        "stock": -1
       }
     ]
   },
   {
     "id": 651363,
-    "path": "apex-legends",
-    "name": "Apex Legends",
+    "name": "Apex Pro",
+    "description": "",
     "currency": "USD",
-    "salt": "apex-salt-003",
-    "group_id": 92905,
-    "products_sold": 850,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Apex Legends Cheat - Custom Aimbot, Glow ESP & Loot Filter",
+    "path": "apex-pro",
+    "aliases": [
+      "apex-legends",
+      "apex",
+      "apex-pro"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944495.webp",
+      "https://api.sellauth.com/storage/images/815760.webp",
+      "https://api.sellauth.com/storage/images/815757.webp"
+    ],
     "variants": [
       {
         "id": 1026646,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "name": "3 Day",
+        "price": 14.95,
+        "stock": -1
       },
       {
         "id": 1026647,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "name": "7 Days",
+        "price": 29.95,
+        "stock": -1
       },
       {
         "id": 1026648,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "name": "30 Days",
+        "price": 54.95,
+        "stock": -1
+      },
+      {
+        "id": 1026674,
+        "name": "Lifetime",
+        "price": 199.95,
+        "stock": -1
       }
     ]
   },
   {
-    "id": 651348,
-    "path": "arc-raiders",
-    "name": "Arc Raiders",
+    "id": 651369,
+    "name": "R6 Private",
+    "description": "",
     "currency": "USD",
-    "salt": "arc-salt-004",
-    "group_id": 92901,
-    "products_sold": 610,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Arc Raiders Cheat - Vector Aimbot, Raider & Machine ESP",
+    "path": "r6-private",
+    "aliases": [
+      "rainbow-six-siege",
+      "r6",
+      "r6-private"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944492.webp",
+      "https://api.sellauth.com/storage/images/955790.webp"
+    ],
     "variants": [
       {
-        "id": 1026616,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "id": 1026675,
+        "name": "3 Day",
+        "price": 9.99,
+        "stock": -1
       },
       {
-        "id": 1026632,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "id": 1026676,
+        "name": "7 Days",
+        "price": 19.99,
+        "stock": -1
       },
       {
-        "id": 1026633,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "id": 1026677,
+        "name": "30 Days",
+        "price": 39.99,
+        "stock": -1
       }
     ]
   },
   {
     "id": 740821,
-    "path": "fortnite-private",
     "name": "Fortnite Private",
+    "description": "",
     "currency": "USD",
-    "salt": "fortnite-salt-005",
-    "group_id": 102708,
-    "products_sold": 2100,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Fortnite Private Cheat - Silent Aim, 3D Box ESP & Vehicle ESP",
+    "path": "fortnite-private",
+    "aliases": [
+      "fortnite-private",
+      "fortnite"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944503.webp"
+    ],
     "variants": [
       {
         "id": 1210784,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "name": "1 Day",
+        "price": 4.99,
+        "stock": -1
       },
       {
         "id": 1210785,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "name": "7 Days",
+        "price": 29.99,
+        "stock": -1
       },
       {
         "id": 1210786,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1360871,
-        "name": "Lifetime",
-        "price": "299.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "name": "30 Days",
+        "price": 54.99,
+        "stock": -1
       }
     ]
   },
   {
     "id": 740827,
-    "path": "delta-force",
-    "name": "Delta Force",
+    "name": "Delta Force Private",
+    "description": "",
     "currency": "USD",
-    "salt": "delta-salt-006",
-    "group_id": 102717,
-    "products_sold": 430,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Delta Force Cheat - Silent Aim, Skeleton ESP & Recoil Bypass",
+    "path": "delta-force-private",
+    "aliases": [
+      "delta-force",
+      "delta-force-private",
+      "delta"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944525.webp"
+    ],
     "variants": [
       {
         "id": 1210803,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "name": "1 Day",
+        "price": 4.99,
+        "stock": -1
       },
       {
         "id": 1210804,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "name": "7 Days",
+        "price": 29.99,
+        "stock": -1
       },
       {
         "id": 1210805,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "name": "30 Days",
+        "price": 54.99,
+        "stock": -1
+      }
+    ]
+  },
+  {
+    "id": 740833,
+    "name": "Rust Private",
+    "description": "",
+    "currency": "USD",
+    "path": "rust-private",
+    "aliases": [
+      "rust",
+      "rust-private"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944529.webp"
+    ],
+    "variants": [
+      {
+        "id": 1210815,
+        "name": "1 Day",
+        "price": 4.99,
+        "stock": -1
+      },
+      {
+        "id": 1210816,
+        "name": "7 Days",
+        "price": 29.99,
+        "stock": -1
+      },
+      {
+        "id": 1210817,
+        "name": "30 Days",
+        "price": 54.99,
+        "stock": -1
       }
     ]
   },
   {
     "id": 740845,
-    "path": "hwid-spoofer",
     "name": "HWID Spoofer",
+    "description": "",
     "currency": "USD",
-    "salt": "woofer-salt-007",
-    "group_id": 102720,
-    "products_sold": 1890,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "HWID Spoofer - Ring0 Kernel Driver, Automated Spoofing",
+    "path": "hwid-spoofer",
+    "aliases": [
+      "hwid-spoofer",
+      "spoofer",
+      "woofer"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944536.webp"
+    ],
     "variants": [
       {
         "id": 1210839,
         "name": "1 Time",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "price": 29.99,
+        "stock": -1
       },
       {
         "id": 1210842,
         "name": "Lifetime",
-        "price": "99.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
+        "price": 99.99,
+        "stock": -1
+      }
+    ]
+  },
+  {
+    "id": 746570,
+    "name": "Valorant Private",
+    "description": "",
+    "currency": "USD",
+    "path": "valorant-private",
+    "aliases": [
+      "valorant-private",
+      "valorant"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/952749.webp"
+    ],
+    "variants": [
+      {
+        "id": 1224111,
+        "name": "1 Day",
+        "price": 9.99,
+        "stock": -1
+      },
+      {
+        "id": 1224112,
+        "name": "7 Days",
+        "price": 29.99,
+        "stock": -1
+      },
+      {
+        "id": 1224113,
+        "name": "30 Days",
+        "price": 54.99,
+        "stock": -1
+      },
+      {
+        "id": 1224114,
+        "name": "Lifetime",
+        "price": 99.99,
+        "stock": -1
       }
     ]
   }
