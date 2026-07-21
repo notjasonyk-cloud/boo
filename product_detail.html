@@ -1180,12 +1180,9 @@
           if (responseData.url) {
             this.checkoutUrl = responseData.url;
             let checkoutTarget = this.checkoutUrl;
-            if (checkoutTarget.includes('riftcheats.com/checkout/')) {
+            if (checkoutTarget.includes('/checkout/')) {
               const invoiceId = checkoutTarget.split('/checkout/')[1];
-              checkoutTarget = `https://checkout.sellauth.com/invoice/${invoiceId}`;
-            } else if (checkoutTarget.startsWith('/checkout/')) {
-              const invoiceId = checkoutTarget.replace('/checkout/', '');
-              checkoutTarget = `https://checkout.sellauth.com/invoice/${invoiceId}`;
+              checkoutTarget = `https://sellauth.com/checkout/${invoiceId}`;
             }
             window.location.href = checkoutTarget;
           } else {
