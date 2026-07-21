@@ -1179,12 +1179,7 @@
 
           if (responseData.url) {
             this.checkoutUrl = responseData.url;
-            let checkoutTarget = this.checkoutUrl;
-            if (checkoutTarget.includes('/checkout/')) {
-              const invoiceId = checkoutTarget.split('/checkout/')[1];
-              checkoutTarget = `https://sellauth.com/checkout/${invoiceId}`;
-            }
-            window.location.href = checkoutTarget;
+            window.location.href = this.checkoutUrl;
           } else {
             this.buyingNow = false;
             this.buyNowError = responseData?.message || responseData?.error || 'SellAuth Checkout Error. Please refresh and try again.';
