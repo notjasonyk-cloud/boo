@@ -1,14 +1,32 @@
-const express = require('express');
+const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3500;
+const API_KEY = "5949675|V9MHzw3p1eegHlQ5DdLAF5kOF4aQGtHeHcGAxHwk0f93ec25";
+const SHOP_ID = "223549";
 
-const API_KEY = process.env.SELLAUTH_API_KEY || "5959307|3C5nX16iKAnZWTam7Mo3Q6o20GapFtnyLwEHtjfY71a1fd57";
-const SHOP_ID = process.env.SELLAUTH_SHOP_ID || "223549";
+const MIME_TYPES = {
+  '.html': 'text/html',
+  '.css': 'text/css',
+  '.js': 'application/javascript',
+  '.json': 'application/json',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon',
+  '.webp': 'image/webp',
+  '.webm': 'video/webm',
+  '.woff': 'font/woff',
+  '.woff2': 'font/woff2',
+  '.ttf': 'font/ttf',
+  '.otf': 'font/otf'
+};
 
+// Map URL path slugs to SellAuth product path strings
 const SLUG_TO_PATH = {
   'rust': 'rust',
   'r6': 'rainbow-six-siege',
@@ -19,6 +37,7 @@ const SLUG_TO_PATH = {
   'woofer': 'hwid-spoofer'
 };
 
+// Mapping of slugs to our local box art images and local custom description
 const PRODUCT_ASSETS = {
   'rust': {
     image: '/storage/images/rust.jpg',
@@ -50,268 +69,7 @@ const PRODUCT_ASSETS = {
   }
 };
 
-const FALLBACK_PRODUCTS = [
-  {
-    "id": 740833,
-    "path": "rust",
-    "name": "Rust Cheat",
-    "currency": "USD",
-    "salt": "rust-salt-001",
-    "group_id": 102718,
-    "products_sold": 1420,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Rust Cheat - Aimbot, ESP, Wallhack & More",
-    "variants": [
-      {
-        "id": 1210815,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210816,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210817,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 651369,
-    "path": "rainbow-six-siege",
-    "name": "Rainbow Six Siege",
-    "currency": "USD",
-    "salt": "r6-salt-002",
-    "group_id": 92904,
-    "products_sold": 980,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Rainbow Six Siege Cheat - Silent Aim, ESP, Chams & More",
-    "variants": [
-      {
-        "id": 1026675,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026676,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026677,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 651363,
-    "path": "apex-legends",
-    "name": "Apex Legends",
-    "currency": "USD",
-    "salt": "apex-salt-003",
-    "group_id": 92905,
-    "products_sold": 850,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Apex Legends Cheat - Custom Aimbot, Glow ESP & Loot Filter",
-    "variants": [
-      {
-        "id": 1026646,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026647,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026648,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 651348,
-    "path": "arc-raiders",
-    "name": "Arc Raiders",
-    "currency": "USD",
-    "salt": "arc-salt-004",
-    "group_id": 92901,
-    "products_sold": 610,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Arc Raiders Cheat - Vector Aimbot, Raider & Machine ESP",
-    "variants": [
-      {
-        "id": 1026616,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026632,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026633,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 740821,
-    "path": "fortnite-private",
-    "name": "Fortnite Private",
-    "currency": "USD",
-    "salt": "fortnite-salt-005",
-    "group_id": 102708,
-    "products_sold": 2100,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Fortnite Private Cheat - Silent Aim, 3D Box ESP & Vehicle ESP",
-    "variants": [
-      {
-        "id": 1210784,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210785,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210786,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1360871,
-        "name": "Lifetime",
-        "price": "299.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 740827,
-    "path": "delta-force",
-    "name": "Delta Force",
-    "currency": "USD",
-    "salt": "delta-salt-006",
-    "group_id": 102717,
-    "products_sold": 430,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Delta Force Cheat - Silent Aim, Skeleton ESP & Recoil Bypass",
-    "variants": [
-      {
-        "id": 1210803,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210804,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210805,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 740845,
-    "path": "hwid-spoofer",
-    "name": "HWID Spoofer",
-    "currency": "USD",
-    "salt": "woofer-salt-007",
-    "group_id": 102720,
-    "products_sold": 1890,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "HWID Spoofer - Ring0 Kernel Driver, Automated Spoofing",
-    "variants": [
-      {
-        "id": 1210839,
-        "name": "1 Time",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210842,
-        "name": "Lifetime",
-        "price": "99.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  }
-];
-
+// Cache SellAuth products list to minimize latency
 let cachedProducts = null;
 let lastFetchTime = 0;
 
@@ -331,7 +89,7 @@ function fetchProductsFromSellAuth(callback) {
       'Accept': 'application/json',
       'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
     },
-    rejectUnauthorized: false
+    rejectUnauthorized: false // Ignore local SSL verification issues if any
   };
 
   const req = https.request(options, (res) => {
@@ -339,136 +97,193 @@ function fetchProductsFromSellAuth(callback) {
     res.on('data', (chunk) => body += chunk);
     res.on('end', () => {
       try {
-        const jsonRes = JSON.parse(body);
-        if (jsonRes && jsonRes.data && Array.isArray(jsonRes.data) && jsonRes.data.length > 0) {
-          cachedProducts = jsonRes.data;
+        const json = JSON.parse(body);
+        if (json && json.data) {
+          cachedProducts = json.data;
           lastFetchTime = Date.now();
-          return callback(null, cachedProducts);
+          console.log(`Successfully updated products cache from SellAuth API! Count: ${cachedProducts.length}`);
+          callback(null, cachedProducts);
+        } else {
+          callback(new Error('Invalid response structure from SellAuth API'), null);
         }
       } catch (err) {
-        // Silent fallback
+        callback(err, null);
       }
-      cachedProducts = FALLBACK_PRODUCTS;
-      lastFetchTime = Date.now();
-      callback(null, cachedProducts);
     });
   });
 
   req.on('error', (err) => {
-    cachedProducts = FALLBACK_PRODUCTS;
-    lastFetchTime = Date.now();
-    callback(null, cachedProducts);
+    callback(err, null);
   });
 
   req.end();
 }
 
-app.use(express.static(__dirname));
+const server = http.createServer((req, res) => {
+  const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
+  let pathname = parsedUrl.pathname;
 
-app.get('/product/:slug', (req, res) => {
-  const slug = (req.params.slug || '').toLowerCase();
-  const sellauthPath = SLUG_TO_PATH[slug];
-  if (!sellauthPath) {
-    return res.status(404).send('Product path configuration missing.');
+  // Intercept product routes: /product/:slug
+  const productMatch = pathname.match(/^\/product\/([a-zA-Z0-9_-]+)$/);
+  if (productMatch) {
+    const slug = productMatch[1].toLowerCase();
+    const sellauthPath = SLUG_TO_PATH[slug];
+
+    if (sellauthPath) {
+      // 1. Fetch live products from SellAuth API
+      fetchProductsFromSellAuth((err, products) => {
+        if (err || !products) {
+          console.error("SellAuth fetch failed, falling back to local simulation:", err);
+          // If SellAuth API is down, fallback to 500 error
+          res.writeHead(500, { 'Content-Type': 'text/plain' });
+          res.end('SellAuth API Connection Error. Please try again.');
+          return;
+        }
+
+        // Find the matched product in our live shop catalog
+        const liveProd = products.find(p => p.path === sellauthPath);
+        if (!liveProd) {
+          res.writeHead(404, { 'Content-Type': 'text/plain' });
+          res.end('Product not found in SellAuth catalog.');
+          return;
+        }
+
+        // 2. Read product_detail.html
+        const templatePath = path.join(__dirname, 'product_detail.html');
+        fs.readFile(templatePath, 'utf8', (err, data) => {
+          if (err) {
+            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            res.end('Internal Server Error');
+            return;
+          }
+
+          const localAsset = PRODUCT_ASSETS[slug] || { image: liveProd.images[0]?.url, desc: liveProd.description };
+
+          // Build our dynamically integrated product JSON
+          const productJson = {
+            id: liveProd.id,
+            path: liveProd.path,
+            unique_id: liveProd.salt,
+            name: liveProd.name,
+            description: localAsset.desc,
+            meta_title: liveProd.name + " - RiftCheats",
+            meta_description: "Information: Windows 10 & 11 Supported, Intel & AMD Processors.",
+            meta_image_url: localAsset.image,
+            meta_twitter_card: "summary_large_image",
+            product_tabs: [],
+            price: liveProd.variants[0]?.price || "0.00",
+            min_price: liveProd.variants[0]?.price || "0.00",
+            max_price: liveProd.variants[liveProd.variants.length - 1]?.price || "0.00",
+            min_price_slash: null,
+            max_price_slash: null,
+            min_price_with_discount: parseFloat(liveProd.variants[0]?.price || 0),
+            max_price_with_discount: parseFloat(liveProd.variants[liveProd.variants.length - 1]?.price || 0),
+            currency: liveProd.currency || "USD",
+            image_url: null,
+            image_urls: [localAsset.image],
+            sort_priority: 0,
+            deliverables: null,
+            stock: -1,
+            hide_stock_count: false,
+            group_id: liveProd.group_id,
+            category_id: null,
+            category: null,
+            type: "variant",
+            visibility: "public",
+            variants: liveProd.variants.map(v => ({
+              id: v.id,
+              name: v.name,
+              description: null,
+              price: v.price,
+              price_slash: null,
+              quantity_min: v.quantity_min,
+              quantity_max: v.quantity_max,
+              volume_discounts: [],
+              deliverables: 0,
+              stock: v.stock,
+              disabled_payment_method_ids: null
+            })),
+            products_sold: liveProd.products_sold,
+            quantity_min: null,
+            quantity_max: null,
+            status_color: "#2ecc71",
+            status_text: "Undetected",
+            custom_fields: [],
+            product_badges: { card: [], page: [] },
+            discord_required: false,
+            discord_guild_id: null,
+            show_views_count: false,
+            show_sales_count: false,
+            show_sales_notifications: false,
+            sales_count_hours: null,
+            created_at: liveProd.created_at || "2026-06-30T04:09:09.000000Z",
+            is_mandatory: false,
+            metadata: null
+          };
+
+          let output = data;
+
+          // Replace metadata titles and images
+          output = output.replace(/<title>.*?<\/title>/g, `<title>${liveProd.name} - RiftCheats</title>`);
+          output = output.replace(/<meta property="og:title" content=".*?"/g, `<meta property="og:title" content="${liveProd.name}"`);
+          output = output.replace(/<meta name="twitter:title" content=".*?"/g, `<meta name="twitter:title" content="${liveProd.name}"`);
+          output = output.replace(/<meta property="og:image" content=".*?"/g, `<meta property="og:image" content="${localAsset.image}"`);
+          output = output.replace(/<meta name="twitter:image" content=".*?"/g, `<meta name="twitter:image" content="${localAsset.image}"`);
+
+          // Replace the main Alpine.js product variable
+          const productPattern = /product:\s*\{"id":774973,[\s\S]*?\}\s*,\s*productAddons/g;
+          output = output.replace(productPattern, `product: ${JSON.stringify(productJson)}, productAddons`);
+
+          // Re-render user reviews using the exact name of the product
+          output = output.replace(/R6 Exodus Lite/g, liveProd.name);
+          output = output.replace(/External Rust/g, liveProd.name);
+          output = output.replace(/Apex Internal/g, liveProd.name);
+
+          res.writeHead(200, { 'Content-Type': 'text/html' });
+          res.end(output);
+        });
+      });
+      return;
+    }
   }
 
-  fetchProductsFromSellAuth((err, products) => {
-    if (!products) {
-      products = FALLBACK_PRODUCTS;
+  // Fallback to static files check
+  let filePath = path.join(__dirname, pathname);
+  
+  if (!filePath.startsWith(__dirname)) {
+    res.statusCode = 403;
+    res.end('Forbidden');
+    return;
+  }
+
+  fs.stat(filePath, (err, stats) => {
+    if (!err && stats.isDirectory()) {
+      filePath = path.join(filePath, 'index.html');
     }
 
-    const liveProd = products.find(p => p.path === sellauthPath) || FALLBACK_PRODUCTS.find(p => p.path === sellauthPath);
-    if (!liveProd) {
-      return res.status(404).send('Product not found.');
-    }
-
-    const templatePath = path.join(__dirname, 'product_detail.html');
-    fs.readFile(templatePath, 'utf8', (err, data) => {
-      if (err) {
-        return res.status(500).send('Server configuration error: product template file missing.');
+    fs.exists(filePath, (exists) => {
+      if (exists && fs.statSync(filePath).isFile()) {
+        const ext = path.extname(filePath).toLowerCase();
+        const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+        
+        res.writeHead(200, { 'Content-Type': contentType });
+        fs.createReadStream(filePath).pipe(res);
+      } else {
+        const indexPath = path.join(__dirname, 'index.html');
+        fs.exists(indexPath, (indexExists) => {
+          if (indexExists) {
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            fs.createReadStream(indexPath).pipe(res);
+          } else {
+            res.writeHead(404, { 'Content-Type': 'text/plain' });
+            res.end('404 Not Found');
+          }
+        });
       }
-
-      const localAsset = PRODUCT_ASSETS[slug] || { image: liveProd.images?.[0]?.url || '/storage/images/rust.jpg', desc: liveProd.description };
-
-      const productJson = {
-        id: liveProd.id,
-        path: liveProd.path,
-        unique_id: liveProd.salt,
-        name: liveProd.name,
-        description: localAsset.desc,
-        meta_title: liveProd.name + " - RiftCheats",
-        meta_description: "Information: Windows 10 & 11 Supported, Intel & AMD Processors.",
-        meta_image_url: localAsset.image,
-        meta_twitter_card: "summary_large_image",
-        product_tabs: [],
-        price: liveProd.variants[0]?.price || "0.00",
-        min_price: liveProd.variants[0]?.price || "0.00",
-        max_price: liveProd.variants[liveProd.variants.length - 1]?.price || "0.00",
-        min_price_slash: null,
-        max_price_slash: null,
-        min_price_with_discount: parseFloat(liveProd.variants[0]?.price || 0),
-        max_price_with_discount: parseFloat(liveProd.variants[liveProd.variants.length - 1]?.price || 0),
-        currency: liveProd.currency || "USD",
-        image_url: localAsset.image,
-        image_urls: [localAsset.image],
-        sort_priority: 0,
-        deliverables: null,
-        stock: -1,
-        hide_stock_count: false,
-        group_id: liveProd.group_id,
-        category_id: null,
-        category: null,
-        type: "variant",
-        visibility: "public",
-        variants: liveProd.variants.map(v => ({
-          id: v.id,
-          name: v.name,
-          description: null,
-          price: v.price,
-          price_slash: null,
-          quantity_min: v.quantity_min || 1,
-          quantity_max: v.quantity_max || 100,
-          volume_discounts: [],
-          deliverables: 0,
-          stock: v.stock || -1,
-          disabled_payment_method_ids: null
-        })),
-        products_sold: liveProd.products_sold || 500,
-        quantity_min: null,
-        quantity_max: null,
-        status_color: "#2ecc71",
-        status_text: "Undetected",
-        custom_fields: [],
-        product_badges: { card: [], page: [] },
-        discord_required: false,
-        discord_guild_id: null,
-        show_views_count: false,
-        show_sales_count: false,
-        show_sales_notifications: false,
-        sales_count_hours: null,
-        created_at: liveProd.created_at || "2026-06-30T04:09:09.000000Z",
-        is_mandatory: false,
-        metadata: null
-      };
-
-      let output = data;
-      output = output.replace(/<title>.*?<\/title>/g, `<title>${liveProd.name} - RiftCheats</title>`);
-      output = output.replace(/<meta property="og:title" content=".*?"/g, `<meta property="og:title" content="${liveProd.name}"`);
-      output = output.replace(/<meta name="twitter:title" content=".*?"/g, `<meta name="twitter:title" content="${liveProd.name}"`);
-      output = output.replace(/<meta property="og:image" content=".*?"/g, `<meta property="og:image" content="${localAsset.image}"`);
-      output = output.replace(/<meta name="twitter:image" content=".*?"/g, `<meta name="twitter:image" content="${localAsset.image}"`);
-
-      const productPattern = /product:\s*\{"id":774973,[\s\S]*?\}\s*,\s*productAddons/g;
-      output = output.replace(productPattern, `product: ${JSON.stringify(productJson)}, productAddons`);
-
-      output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
-      output = output.replace(/External Rust/g, liveProd.name);
-
-      res.status(200).set('Content-Type', 'text/html; charset=utf-8').send(output);
     });
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
+server.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
 });

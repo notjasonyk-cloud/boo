@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const API_KEY = process.env.SELLAUTH_API_KEY || "5959307|3C5nX16iKAnZWTam7Mo3Q6o20GapFtnyLwEHtjfY71a1fd57";
+const API_KEY = process.env.SELLAUTH_API_KEY || "5949675|V9MHzw3p1eegHlQ5DdLAF5kOF4aQGtHeHcGAxHwk0f93ec25";
 const SHOP_ID = process.env.SELLAUTH_SHOP_ID || "223549";
 
 // Map URL path slugs to SellAuth product path strings
@@ -47,268 +47,6 @@ const PRODUCT_ASSETS = {
   }
 };
 
-const FALLBACK_PRODUCTS = [
-  {
-    "id": 740833,
-    "path": "rust",
-    "name": "Rust Cheat",
-    "currency": "USD",
-    "salt": "rust-salt-001",
-    "group_id": 102718,
-    "products_sold": 1420,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Rust Cheat - Aimbot, ESP, Wallhack & More",
-    "variants": [
-      {
-        "id": 1210815,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210816,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210817,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 651369,
-    "path": "rainbow-six-siege",
-    "name": "Rainbow Six Siege",
-    "currency": "USD",
-    "salt": "r6-salt-002",
-    "group_id": 92904,
-    "products_sold": 980,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Rainbow Six Siege Cheat - Silent Aim, ESP, Chams & More",
-    "variants": [
-      {
-        "id": 1026675,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026676,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026677,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 651363,
-    "path": "apex-legends",
-    "name": "Apex Legends",
-    "currency": "USD",
-    "salt": "apex-salt-003",
-    "group_id": 92905,
-    "products_sold": 850,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Apex Legends Cheat - Custom Aimbot, Glow ESP & Loot Filter",
-    "variants": [
-      {
-        "id": 1026646,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026647,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026648,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 651348,
-    "path": "arc-raiders",
-    "name": "Arc Raiders",
-    "currency": "USD",
-    "salt": "arc-salt-004",
-    "group_id": 92901,
-    "products_sold": 610,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Arc Raiders Cheat - Vector Aimbot, Raider & Machine ESP",
-    "variants": [
-      {
-        "id": 1026616,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026632,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1026633,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 740821,
-    "path": "fortnite-private",
-    "name": "Fortnite Private",
-    "currency": "USD",
-    "salt": "fortnite-salt-005",
-    "group_id": 102708,
-    "products_sold": 2100,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Fortnite Private Cheat - Silent Aim, 3D Box ESP & Vehicle ESP",
-    "variants": [
-      {
-        "id": 1210784,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210785,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210786,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1360871,
-        "name": "Lifetime",
-        "price": "299.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 740827,
-    "path": "delta-force",
-    "name": "Delta Force",
-    "currency": "USD",
-    "salt": "delta-salt-006",
-    "group_id": 102717,
-    "products_sold": 430,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "Delta Force Cheat - Silent Aim, Skeleton ESP & Recoil Bypass",
-    "variants": [
-      {
-        "id": 1210803,
-        "name": "1 Day key",
-        "price": "7.49",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210804,
-        "name": "7 Day Key",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210805,
-        "name": "30 Day Key",
-        "price": "59.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  },
-  {
-    "id": 740845,
-    "path": "hwid-spoofer",
-    "name": "HWID Spoofer",
-    "currency": "USD",
-    "salt": "woofer-salt-007",
-    "group_id": 102720,
-    "products_sold": 1890,
-    "created_at": "2026-06-30T04:09:09.000000Z",
-    "description": "HWID Spoofer - Ring0 Kernel Driver, Automated Spoofing",
-    "variants": [
-      {
-        "id": 1210839,
-        "name": "1 Time",
-        "price": "29.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      },
-      {
-        "id": 1210842,
-        "name": "Lifetime",
-        "price": "99.99",
-        "stock": -1,
-        "quantity_min": 1,
-        "quantity_max": 100
-      }
-    ]
-  }
-];
-
 let cachedProducts = null;
 let lastFetchTime = 0;
 
@@ -336,25 +74,22 @@ function fetchProductsFromSellAuth(callback) {
     res.on('data', (chunk) => body += chunk);
     res.on('end', () => {
       try {
-        const jsonRes = JSON.parse(body);
-        if (jsonRes && jsonRes.data && Array.isArray(jsonRes.data) && jsonRes.data.length > 0) {
-          cachedProducts = jsonRes.data;
+        const json = JSON.parse(body);
+        if (json && json.data) {
+          cachedProducts = json.data;
           lastFetchTime = Date.now();
-          return callback(null, cachedProducts);
+          callback(null, cachedProducts);
+        } else {
+          callback(new Error('Invalid response structure from SellAuth API'), null);
         }
       } catch (err) {
-        // Silent fallback
+        callback(err, null);
       }
-      cachedProducts = FALLBACK_PRODUCTS;
-      lastFetchTime = Date.now();
-      callback(null, cachedProducts);
     });
   });
 
   req.on('error', (err) => {
-    cachedProducts = FALLBACK_PRODUCTS;
-    lastFetchTime = Date.now();
-    callback(null, cachedProducts);
+    callback(err, null);
   });
 
   req.end();
@@ -378,15 +113,19 @@ module.exports = (req, res) => {
   }
 
   fetchProductsFromSellAuth((err, products) => {
-    if (!products) {
-      products = FALLBACK_PRODUCTS;
+    if (err || !products) {
+      console.error("SellAuth API Error:", err);
+      res.statusCode = 500;
+      res.setHeader('Content-Type', 'text/plain');
+      res.end('SellAuth API Connection Error. Please refresh and try again.');
+      return;
     }
 
-    const liveProd = products.find(p => p.path === sellauthPath) || FALLBACK_PRODUCTS.find(p => p.path === sellauthPath);
+    const liveProd = products.find(p => p.path === sellauthPath);
     if (!liveProd) {
       res.statusCode = 404;
       res.setHeader('Content-Type', 'text/plain');
-      res.end('Product not found.');
+      res.end('Product not found in SellAuth dashboard.');
       return;
     }
 
@@ -401,7 +140,7 @@ module.exports = (req, res) => {
         return;
       }
 
-      const localAsset = PRODUCT_ASSETS[slug] || { image: liveProd.images?.[0]?.url || '/storage/images/rust.jpg', desc: liveProd.description };
+      const localAsset = PRODUCT_ASSETS[slug] || { image: liveProd.images[0]?.url, desc: liveProd.description };
 
       const productJson = {
         id: liveProd.id,
@@ -422,7 +161,7 @@ module.exports = (req, res) => {
         min_price_with_discount: parseFloat(liveProd.variants[0]?.price || 0),
         max_price_with_discount: parseFloat(liveProd.variants[liveProd.variants.length - 1]?.price || 0),
         currency: liveProd.currency || "USD",
-        image_url: localAsset.image,
+        image_url: null,
         image_urls: [localAsset.image],
         sort_priority: 0,
         deliverables: null,
@@ -439,14 +178,14 @@ module.exports = (req, res) => {
           description: null,
           price: v.price,
           price_slash: null,
-          quantity_min: v.quantity_min || 1,
-          quantity_max: v.quantity_max || 100,
+          quantity_min: v.quantity_min,
+          quantity_max: v.quantity_max,
           volume_discounts: [],
           deliverables: 0,
-          stock: v.stock || -1,
+          stock: v.stock,
           disabled_payment_method_ids: null
         })),
-        products_sold: liveProd.products_sold || 500,
+        products_sold: liveProd.products_sold,
         quantity_min: null,
         quantity_max: null,
         status_color: "#2ecc71",
@@ -477,14 +216,13 @@ module.exports = (req, res) => {
       const productPattern = /product:\s*\{"id":774973,[\s\S]*?\}\s*,\s*productAddons/g;
       output = output.replace(productPattern, `product: ${JSON.stringify(productJson)}, productAddons`);
 
-      // Update hero thumbnail image from default rust 1008329.webp to localAsset.image
-      output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
-
-      // Update titles and reviews
+      // Update reviews
+      output = output.replace(/R6 Exodus Lite/g, liveProd.name);
       output = output.replace(/External Rust/g, liveProd.name);
+      output = output.replace(/Apex Internal/g, liveProd.name);
 
       res.statusCode = 200;
-      res.setHeader('Content-Type', 'text/html; charset=utf-8');
+      res.setHeader('Content-Type', 'text/html');
       res.end(output);
     });
   });
