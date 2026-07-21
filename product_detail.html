@@ -647,7 +647,7 @@
                   <button
                     type="submit"
                     class="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl border border-white/5 text-sm font-semibold bg-gradient-button-primary text-t-primary transition hover:enabled:opacity-90 disabled:opacity-50 disabled:pointer-events-none"
-                    :disabled="outOfStock || product.visibility == 'on_hold' || buyingNow || buyNowDisabled"
+                    :disabled="outOfStock || product.visibility == 'on_hold' || buyingNow"
                   >
                     <template x-if="!buyingNow">
                       <span class="inline-flex justify-center items-center gap-2">
@@ -1103,6 +1103,7 @@
       },
 
       addAltchaEventListener: function () {
+        if (!this.$refs || !this.$refs.altcha) return;
         this.$refs.altcha.addEventListener('statechange', (event) => {
           if (event.detail.state === 'verifying') {
             this.buyNowDisabled = true;
