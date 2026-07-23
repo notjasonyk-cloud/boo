@@ -2,7 +2,10 @@
   "version": 2,
   "functions": {
     "api/*.js": {
-      "includeFiles": "product_detail.html"
+      "includeFiles": [
+        "product_detail.html",
+        "sellauth_fallback.json"
+      ]
     }
   },
   "routes": [

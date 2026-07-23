@@ -5,6 +5,297 @@ const https = require('https');
 
 const PORT = process.env.PORT || 3500;
 const API_KEY = "5949675|V9MHzw3p1eegHlQ5DdLAF5kOF4aQGtHeHcGAxHwk0f93ec25";
+const FALLBACK_PRODUCTS = [
+  {
+    "id": 651348,
+    "name": "Krush Arc Cheat",
+    "description": "",
+    "currency": "USD",
+    "path": "arc-raiders-elite",
+    "aliases": [
+      "arc-raiders",
+      "arc",
+      "arc-raiders-elite"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944493.webp",
+      "https://api.sellauth.com/storage/images/815724.webp",
+      "https://api.sellauth.com/storage/images/815739.webp"
+    ],
+    "variants": [
+      {
+        "id": 1026616,
+        "name": "1 Day",
+        "price": 7.95,
+        "stock": -1
+      },
+      {
+        "id": 1026632,
+        "name": "7 Days",
+        "price": 29.95,
+        "stock": -1
+      },
+      {
+        "id": 1026633,
+        "name": "30 Days",
+        "price": 54.95,
+        "stock": -1
+      }
+    ]
+  },
+  {
+    "id": 651363,
+    "name": "Krush Apex Cheat",
+    "description": "",
+    "currency": "USD",
+    "path": "apex-pro",
+    "aliases": [
+      "apex-legends",
+      "apex",
+      "apex-pro"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944495.webp",
+      "https://api.sellauth.com/storage/images/815760.webp",
+      "https://api.sellauth.com/storage/images/815757.webp"
+    ],
+    "variants": [
+      {
+        "id": 1026646,
+        "name": "3 Day",
+        "price": 14.95,
+        "stock": -1
+      },
+      {
+        "id": 1026647,
+        "name": "7 Days",
+        "price": 29.95,
+        "stock": -1
+      },
+      {
+        "id": 1026648,
+        "name": "30 Days",
+        "price": 54.95,
+        "stock": -1
+      },
+      {
+        "id": 1026674,
+        "name": "Lifetime",
+        "price": 199.95,
+        "stock": -1
+      }
+    ]
+  },
+  {
+    "id": 651369,
+    "name": "Crusader R6 Cheat",
+    "description": "",
+    "currency": "USD",
+    "path": "r6-private",
+    "aliases": [
+      "rainbow-six-siege",
+      "r6",
+      "r6-private"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944492.webp",
+      "https://api.sellauth.com/storage/images/955790.webp"
+    ],
+    "variants": [
+      {
+        "id": 1026675,
+        "name": "3 Day",
+        "price": 9.99,
+        "stock": -1
+      },
+      {
+        "id": 1026676,
+        "name": "7 Days",
+        "price": 19.99,
+        "stock": -1
+      },
+      {
+        "id": 1026677,
+        "name": "30 Days",
+        "price": 39.99,
+        "stock": -1
+      }
+    ]
+  },
+  {
+    "id": 740821,
+    "name": "Disconnect Fortnite Cheat",
+    "description": "",
+    "currency": "USD",
+    "path": "fortnite-private",
+    "aliases": [
+      "fortnite-private",
+      "fortnite"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944503.webp"
+    ],
+    "variants": [
+      {
+        "id": 1210784,
+        "name": "1 Day",
+        "price": 4.99,
+        "stock": -1
+      },
+      {
+        "id": 1210785,
+        "name": "7 Days",
+        "price": 29.99,
+        "stock": -1
+      },
+      {
+        "id": 1210786,
+        "name": "30 Days",
+        "price": 54.99,
+        "stock": -1
+      }
+    ]
+  },
+  {
+    "id": 740827,
+    "name": "Ancient Delta Cheat",
+    "description": "",
+    "currency": "USD",
+    "path": "delta-force-private",
+    "aliases": [
+      "delta-force",
+      "delta-force-private",
+      "delta"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944525.webp"
+    ],
+    "variants": [
+      {
+        "id": 1210803,
+        "name": "1 Day",
+        "price": 4.99,
+        "stock": -1
+      },
+      {
+        "id": 1210804,
+        "name": "7 Days",
+        "price": 29.99,
+        "stock": -1
+      },
+      {
+        "id": 1210805,
+        "name": "30 Days",
+        "price": 54.99,
+        "stock": -1
+      }
+    ]
+  },
+  {
+    "id": 740833,
+    "name": "Krush Rust Cheat",
+    "description": "",
+    "currency": "USD",
+    "path": "rust-private",
+    "aliases": [
+      "rust",
+      "rust-private"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944529.webp"
+    ],
+    "variants": [
+      {
+        "id": 1210815,
+        "name": "1 Day",
+        "price": 4.99,
+        "stock": -1
+      },
+      {
+        "id": 1210816,
+        "name": "7 Days",
+        "price": 29.99,
+        "stock": -1
+      },
+      {
+        "id": 1210817,
+        "name": "30 Days",
+        "price": 54.99,
+        "stock": -1
+      }
+    ]
+  },
+  {
+    "id": 740845,
+    "name": "Verse HWID Spoofer",
+    "description": "",
+    "currency": "USD",
+    "path": "hwid-spoofer",
+    "aliases": [
+      "hwid-spoofer",
+      "spoofer",
+      "woofer"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/944536.webp"
+    ],
+    "variants": [
+      {
+        "id": 1210839,
+        "name": "1 Time",
+        "price": 29.99,
+        "stock": -1
+      },
+      {
+        "id": 1210842,
+        "name": "Lifetime",
+        "price": 99.99,
+        "stock": -1
+      }
+    ]
+  },
+  {
+    "id": 746570,
+    "name": "Valorant Private",
+    "description": "",
+    "currency": "USD",
+    "path": "valorant-private",
+    "aliases": [
+      "valorant-private",
+      "valorant"
+    ],
+    "images": [
+      "https://api.sellauth.com/storage/images/952749.webp"
+    ],
+    "variants": [
+      {
+        "id": 1224111,
+        "name": "1 Day",
+        "price": 9.99,
+        "stock": -1
+      },
+      {
+        "id": 1224112,
+        "name": "7 Days",
+        "price": 29.99,
+        "stock": -1
+      },
+      {
+        "id": 1224113,
+        "name": "30 Days",
+        "price": 54.99,
+        "stock": -1
+      },
+      {
+        "id": 1224114,
+        "name": "Lifetime",
+        "price": 99.99,
+        "stock": -1
+      }
+    ]
+  }
+];
+
 const SHOP_ID = "223549";
 
 const MIME_TYPES = {
@@ -88,10 +379,21 @@ let cachedProducts = null;
 let lastFetchTime = 0;
 
 function getProducts(callback) {
-  getProducts((err, products) => {
+  fetchProductsFromSellAuth((err, products) => {
     if (!err && products && Array.isArray(products) && products.length > 0) {
       return callback(null, products);
     }
+    console.warn("SellAuth live API failed or rate-limited, returning bundled FALLBACK_PRODUCTS");
+    try {
+      if (typeof FALLBACK_PRODUCTS !== 'undefined' && Array.isArray(FALLBACK_PRODUCTS) && FALLBACK_PRODUCTS.length > 0) {
+        return callback(null, FALLBACK_PRODUCTS);
+      }
+    } catch (e) {
+      console.error("Fallback error:", e);
+    }
+    callback(err || new Error("Unable to load product data"), null);
+  });
+}
     console.warn("SellAuth live API failed or rate-limited, reading sellauth_fallback.json");
     try {
       const fallbackPath = path.join(process.cwd(), 'sellauth_fallback.json');
