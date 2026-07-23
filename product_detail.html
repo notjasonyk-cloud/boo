@@ -1229,13 +1229,8 @@
 
           const responseData = await response.json();
 
-          if (responseData.url) {
-            let targetUrl = responseData.url;
-            if (targetUrl.includes('/checkout/')) {
-              const sessionPath = targetUrl.substring(targetUrl.indexOf('/checkout/'));
-              targetUrl = `https://sellauth.com${sessionPath}`;
-            }
-            window.location.href = targetUrl;
+                    if (responseData.url) {
+            window.location.href = responseData.url;
           } else {
             this.buyingNow = false;
             this.buyNowError = responseData?.message || 'Error in the AJAX request.';

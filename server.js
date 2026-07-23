@@ -367,6 +367,31 @@ function fetchProductsFromSellAuth(callback) {
 }
 
 module.exports = (req, res) => {
+  // Check if this is a checkout request
+  if (req.query.checkout || req.url.includes('/checkout/')) {
+    let checkoutId = req.query.checkout;
+    if (!checkoutId) {
+      const parts = req.url.split('?')[0].split('/');
+      checkoutId = parts[parts.length - 1];
+    }
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end(`<!DOCTYPE html>
+<html lang="en" style="height:100%;margin:0;padding:0;background:#030712;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - RiftCheats</title>
+  <link rel="icon" type="image/png" href="/assets/197035/logo.png?v=2026">
+  <style>html,body{margin:0;padding:0;height:100%;width:100%;background:#030712;overflow:hidden;}iframe{width:100%;height:100vh;border:none;display:block;}</style>
+</head>
+<body>
+  <iframe src="https://sellauth.com/checkout/${checkoutId}" allow="clipboard-write; payment"></iframe>
+</body>
+</html>`);
+    return;
+  }
+
   let slug = req.query.slug;
   if (!slug) {
     const urlParts = req.url.split('?')[0].split('/');
@@ -498,9 +523,9 @@ module.exports = (req, res) => {
       const productPattern = /product:\s*\{"id":774973,[\s\S]*?\}\s*,\s*productAddons/g;
       output = output.replace(productPattern, `product: ${JSON.stringify(productJson)}, productAddons`);
 
-      output = output.replace(/R6 Exodus Lite/g, liveProd.name);
-            output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
+      output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
       output = output.replace(/\/storage\/images\/rust\.jpg/g, localAsset.image);
+      output = output.replace(/R6 Exodus Lite/g, liveProd.name);
       output = output.replace(/External Rust/g, liveProd.name);
       output = output.replace(/Apex Internal/g, liveProd.name);
 

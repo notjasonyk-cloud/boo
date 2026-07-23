@@ -7,9 +7,8 @@
   },
   "routes": [
     {
-      "src": "/checkout/(.*)",
-      "dest": "https://sellauth.com/checkout/$1",
-      "status": 302
+      "src": "/checkout/(?<checkout>[a-zA-Z0-9_-]+)",
+      "dest": "/api/index.js?checkout=$checkout"
     },
     {
       "src": "/product/(?<slug>[a-zA-Z0-9_-]+)",
