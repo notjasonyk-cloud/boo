@@ -7,6 +7,10 @@
   },
   "routes": [
     {
+      "src": "/checkout/assets/(.*)",
+      "dest": "https://sellauth.com/checkout/assets/$1"
+    },
+    {
       "src": "/checkout/(.*)",
       "dest": "/api/index.js"
     },

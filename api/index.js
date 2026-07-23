@@ -392,7 +392,7 @@ module.exports = (req, res) => {
         const contentType = proxyRes.headers['content-type'] || '';
         if (contentType.includes('text/html')) {
           let html = buffer.toString('utf8');
-          // Fix relative asset links so JS/CSS assets fetch from https://sellauth.com
+          // Fix relative asset links so JS/CSS assets fetch directly from https://sellauth.com
           html = html.replace(/src="\/checkout\/assets\//g, 'src="https://sellauth.com/checkout/assets/');
           html = html.replace(/href="\/checkout\/assets\//g, 'href="https://sellauth.com/checkout/assets/');
           html = html.replace(/src="\/cdn-cgi\//g, 'src="https://sellauth.com/cdn-cgi/');
