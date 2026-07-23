@@ -386,6 +386,28 @@ module.exports = (req, res) => {
 
     const slugClean = slug.replace(/-(private|pro|elite)$/, '');
 
+    const FULL_NAMES = {
+      'rust': 'Krush Rust Cheat',
+      'rust-private': 'Krush Rust Cheat',
+      'r6': 'Crusader R6 Cheat',
+      'rainbow-six-siege': 'Crusader R6 Cheat',
+      'r6-private': 'Crusader R6 Cheat',
+      'apex': 'Krush Apex Cheat',
+      'apex-legends': 'Krush Apex Cheat',
+      'apex-pro': 'Krush Apex Cheat',
+      'arc': 'Krush Arc Cheat',
+      'arc-raiders': 'Krush Arc Cheat',
+      'arc-raiders-elite': 'Krush Arc Cheat',
+      'fortnite': 'Disconnect Fortnite Cheat',
+      'fortnite-private': 'Disconnect Fortnite Cheat',
+      'delta': 'Ancient Delta Cheat',
+      'delta-force': 'Ancient Delta Cheat',
+      'delta-force-private': 'Ancient Delta Cheat',
+      'woofer': 'Verse HWID Spoofer',
+      'spoofer': 'Verse HWID Spoofer',
+      'hwid-spoofer': 'Verse HWID Spoofer'
+    };
+
     const liveProd = products.find(p => {
       if (!p) return false;
       const pPath = (p.path || '').toLowerCase();
@@ -429,7 +451,7 @@ module.exports = (req, res) => {
         id: liveProd.id,
         path: liveProd.path,
         unique_id: liveProd.salt,
-        name: liveProd.name,
+        name: FULL_NAMES[slug] || liveProd.name,
         description: localAsset.desc,
         meta_title: liveProd.name + " - RiftCheats",
         meta_description: "Information: Windows 10 & 11 Supported, Intel & AMD Processors.",
@@ -499,9 +521,9 @@ module.exports = (req, res) => {
 
       output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
       output = output.replace(/\/storage\/images\/rust\.jpg/g, localAsset.image);
-      output = output.replace(/R6 Exodus Lite/g, liveProd.name);
-      output = output.replace(/External Rust/g, liveProd.name);
-      output = output.replace(/Apex Internal/g, liveProd.name);
+      output = output.replace(/Crusader R6 Cheat/g, liveProd.name);
+      output = output.replace(/Krush Rust Cheat/g, liveProd.name);
+      output = output.replace(/Krush Apex Cheat/g, liveProd.name);
 
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/html');
