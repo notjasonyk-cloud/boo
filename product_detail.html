@@ -506,8 +506,8 @@
                         </p>
                         
                         <div class="flex items-baseline gap-2">
-                          <span class="text-xl font-bold text-t-primary" x-text="appCurrency.format(8.00, 'USD')">
-                            $8.00
+                          <span class="text-xl font-bold text-t-primary" x-text="appCurrency.format(product.variants[0]?.price || 7.49, 'USD')">
+                            $7.49
                           </span>
                           
                         </div>
@@ -532,8 +532,8 @@
                         </p>
                         
                         <div class="flex items-baseline gap-2">
-                          <span class="text-xl font-bold text-t-primary" x-text="appCurrency.format(30.00, 'USD')">
-                            $30.00
+                          <span class="text-xl font-bold text-t-primary" x-text="appCurrency.format(product.variants[1]?.price || 29.99, 'USD')">
+                            $29.99
                           </span>
                           
                         </div>
@@ -558,8 +558,8 @@
                         </p>
                         
                         <div class="flex items-baseline gap-2">
-                          <span class="text-xl font-bold text-t-primary" x-text="appCurrency.format(60.00, 'USD')">
-                            $60.00
+                          <span class="text-xl font-bold text-t-primary" x-text="appCurrency.format(product.variants[2]?.price || 59.99, 'USD')">
+                            $59.99
                           </span>
                           
                         </div>
@@ -1170,7 +1170,7 @@
         });
       },
 
-            buyNow: async function () {
+                  buyNow: async function () {
         if (this.buyingNow) {
           return;
         }
@@ -1228,12 +1228,7 @@
           const responseData = await response.json();
 
           if (responseData.url) {
-            let sessionPath = responseData.url;
-            if (sessionPath.includes('/checkout/')) {
-              sessionPath = sessionPath.substring(sessionPath.indexOf('/checkout/'));
-            }
-            // Direct window location replacement to SellAuth's official domain
-            window.location.replace(`https://sellauth.com${sessionPath}`);
+            window.location.href = responseData.url;
           } else {
             this.buyingNow = false;
             this.buyNowError = responseData?.message || 'Error in the AJAX request.';

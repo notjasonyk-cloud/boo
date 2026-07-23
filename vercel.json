@@ -7,6 +7,10 @@
   },
   "routes": [
     {
+      "src": "/checkout/(.*)",
+      "dest": "/api/index.js"
+    },
+    {
       "src": "/product/(?<slug>[a-zA-Z0-9_-]+)",
       "dest": "/api/index.js?slug=$slug"
     },
