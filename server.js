@@ -366,53 +366,6 @@ function fetchProductsFromSellAuth(callback) {
 }
 
 module.exports = (req, res) => {
-  // Proxy /checkout/* requests directly from SellAuth's servers
-  if (req.url && req.url.startsWith('/checkout/')) {
-    const proxyOptions = {
-      hostname: 'sellauth.com',
-      path: req.url,
-      method: 'GET',
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': req.headers['accept'] || '*/*',
-        'Accept-Language': req.headers['accept-language'] || 'en-US,en;q=0.9'
-      }
-    };
-
-    const proxyReq = https.request(proxyOptions, (proxyRes) => {
-      res.statusCode = proxyRes.statusCode;
-      if (proxyRes.headers['content-type']) {
-        res.setHeader('Content-Type', proxyRes.headers['content-type']);
-      }
-      
-      let data = [];
-      proxyRes.on('data', (chunk) => data.push(chunk));
-      proxyRes.on('end', () => {
-        let buffer = Buffer.concat(data);
-        const contentType = proxyRes.headers['content-type'] || '';
-        if (contentType.includes('text/html')) {
-          let html = buffer.toString('utf8');
-          // Fix relative asset links so JS/CSS assets fetch directly from https://sellauth.com
-          html = html.replace(/src="\/checkout\/assets\//g, 'src="https://sellauth.com/checkout/assets/');
-          html = html.replace(/href="\/checkout\/assets\//g, 'href="https://sellauth.com/checkout/assets/');
-          html = html.replace(/src="\/cdn-cgi\//g, 'src="https://sellauth.com/cdn-cgi/');
-          res.end(html);
-        } else {
-          res.end(buffer);
-        }
-      });
-    });
-
-    proxyReq.on('error', (err) => {
-      console.error("Checkout Proxy Error:", err);
-      res.statusCode = 500;
-      res.end("Checkout Proxy Error");
-    });
-
-    proxyReq.end();
-    return;
-  }
-
   let slug = req.query.slug;
   if (!slug) {
     const urlParts = req.url.split('?')[0].split('/');
