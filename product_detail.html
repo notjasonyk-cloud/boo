@@ -1170,7 +1170,7 @@
         });
       },
 
-      buyNow: async function () {
+            buyNow: async function () {
         if (this.buyingNow) {
           return;
         }
@@ -1209,11 +1209,9 @@
           formData.email = window.shopCustomer.email;
         }
 
-        
-          if (this.altchaPayload) {
-            formData.altcha = this.altchaPayload;
-          }
-        
+        if (this.altchaPayload) {
+          formData.altcha = this.altchaPayload;
+        }
 
         try {
           this.buyingNow = true;
@@ -1229,8 +1227,13 @@
 
           const responseData = await response.json();
 
-                    if (responseData.url) {
-            window.location.href = responseData.url;
+          if (responseData.url) {
+            let sessionPath = responseData.url;
+            if (sessionPath.includes('/checkout/')) {
+              sessionPath = sessionPath.substring(sessionPath.indexOf('/checkout/'));
+            }
+            // Direct window location replacement to SellAuth's official domain
+            window.location.replace(`https://sellauth.com${sessionPath}`);
           } else {
             this.buyingNow = false;
             this.buyNowError = responseData?.message || 'Error in the AJAX request.';
