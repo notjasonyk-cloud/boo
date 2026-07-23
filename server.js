@@ -6,36 +6,34 @@ const FALLBACK_PRODUCTS = [
   {
     "id": 651348,
     "name": "Krush Arc Cheat",
-    "description": "",
+    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Arc Raiders Elite is the ultimate undetected cheat suite for dominating ARC Raiders extractions. Featuring lightning-fast aimbot, crystal-clear ESP &amp; wallhack, customizable radar, loot scanner, and no-recoil precision, all while staying fully undetected against aggressive anti-cheat waves. Elevate your raids, secure top-tier loot, and outplay every opponent with elite-level advantage. </span></p>",
     "currency": "USD",
-    "path": "arc-raiders-elite",
+    "path": "arc-raiders",
     "aliases": [
       "arc-raiders",
       "arc",
       "arc-raiders-elite"
     ],
     "images": [
-      "https://api.sellauth.com/storage/images/944493.webp",
-      "https://api.sellauth.com/storage/images/815724.webp",
-      "https://api.sellauth.com/storage/images/815739.webp"
+      "https://api.sellauth.com/storage/images/944493.webp"
     ],
     "variants": [
       {
         "id": 1026616,
         "name": "1 Day",
-        "price": 7.95,
+        "price": 7.49,
         "stock": -1
       },
       {
         "id": 1026632,
         "name": "7 Days",
-        "price": 29.95,
+        "price": 29.99,
         "stock": -1
       },
       {
         "id": 1026633,
         "name": "30 Days",
-        "price": 54.95,
+        "price": 59.99,
         "stock": -1
       }
     ]
@@ -43,42 +41,34 @@ const FALLBACK_PRODUCTS = [
   {
     "id": 651363,
     "name": "Krush Apex Cheat",
-    "description": "",
+    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Apex Pro is the ultimate undetected cheat suite for dominating Apex Legends arenas and ranked lobbies. Featuring lightning-fast aimbot, crystal-clear ESP &amp; wallhack, customizable radar, item/loot scanner, no-recoil + perfect movement macros, all while staying fully undetected against the latest EAC and Ricochet anti-cheat updates. Climb ranks faster, secure endgame wins, and outplay every squad with pro-level advantage.</span></p>",
     "currency": "USD",
-    "path": "apex-pro",
+    "path": "apex-legends",
     "aliases": [
       "apex-legends",
       "apex",
       "apex-pro"
     ],
     "images": [
-      "https://api.sellauth.com/storage/images/944495.webp",
-      "https://api.sellauth.com/storage/images/815760.webp",
-      "https://api.sellauth.com/storage/images/815757.webp"
+      "https://api.sellauth.com/storage/images/944495.webp"
     ],
     "variants": [
       {
         "id": 1026646,
-        "name": "3 Day",
-        "price": 14.95,
+        "name": "1 Day",
+        "price": 7.49,
         "stock": -1
       },
       {
         "id": 1026647,
         "name": "7 Days",
-        "price": 29.95,
+        "price": 29.99,
         "stock": -1
       },
       {
         "id": 1026648,
         "name": "30 Days",
-        "price": 54.95,
-        "stock": -1
-      },
-      {
-        "id": 1026674,
-        "name": "Lifetime",
-        "price": 199.95,
+        "price": 59.99,
         "stock": -1
       }
     ]
@@ -86,35 +76,34 @@ const FALLBACK_PRODUCTS = [
   {
     "id": 651369,
     "name": "Crusader R6 Cheat",
-    "description": "",
+    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Rainbow Six Siege Private is the ultimate undetected cheat suite for dominating Rainbow Six Siege ranked lobbies and competitive matches. Featuring lightning-fast aimbot, crystal-clear ESP &amp; wallhack, customizable radar, gadget/loot scanner, no-recoil + perfect lean/peek macros, all while staying fully undetected against the latest BattlEye and R6 ShieldGuard anti-cheat updates. Climb to Champion faster, secure clutch wins, and outplay every team with pro-level advantage.</span></p>",
     "currency": "USD",
-    "path": "r6-private",
+    "path": "rainbow-six-siege",
     "aliases": [
       "rainbow-six-siege",
       "r6",
       "r6-private"
     ],
     "images": [
-      "https://api.sellauth.com/storage/images/944492.webp",
-      "https://api.sellauth.com/storage/images/955790.webp"
+      "https://api.sellauth.com/storage/images/944492.webp"
     ],
     "variants": [
       {
         "id": 1026675,
-        "name": "3 Day",
-        "price": 9.99,
+        "name": "1 Day",
+        "price": 7.49,
         "stock": -1
       },
       {
         "id": 1026676,
         "name": "7 Days",
-        "price": 19.99,
+        "price": 29.99,
         "stock": -1
       },
       {
         "id": 1026677,
         "name": "30 Days",
-        "price": 39.99,
+        "price": 59.99,
         "stock": -1
       }
     ]
@@ -122,7 +111,7 @@ const FALLBACK_PRODUCTS = [
   {
     "id": 740821,
     "name": "Disconnect Fortnite Cheat",
-    "description": "",
+    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">World:</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Loot Settings</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Display Status</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Items</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Loot Color</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Render Distance</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Categories</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Weapon</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enable Category</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Draw Settings</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Name: Always</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Distance: Always</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Rarity: Always | On Hover</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Categories Settings</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Font</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Color</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Aimbot:</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">General</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enable Aimbot</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- AimBot Type: Static | Curved</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Aim Bind</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Second Aim Bind</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw FOV</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Target</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Aim Only Visible</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Lock Target</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Ignore Knocked</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Prediction</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Category Settings</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Global</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Melee</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Rifle</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Shotgun</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- SMG</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Pistol</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Sniper</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Other</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Additional</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- FOV (slider)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Smooth (slider)</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Trigger Bot</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enable</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Trigger Bind</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Delay Before Firing</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Firing Time</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Delay After Firing</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Bone Selection</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Aim Bone: Head | Neck | Body | Stomach | Nearest</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Force Bone</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Force Bind</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Visuals:</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">General</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Render Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw AI</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Box</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Skeleton</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Skeleton Thickness (slider)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Line</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Line Type</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Name</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Distance</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Additional Info</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Team</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Unique Team Color</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Kills</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Platform</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Rank</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Weapon</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Radar</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enable Radar</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Radar Size (slider)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Draw Player</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Settings:</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Show FPS</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- FPS Locker (slider)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enable Crosshair</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Crosshair Size</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- ESP Text Size</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Loot Text Size</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Language</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Add Config</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Load Config</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Share Config</span></p><p class=\"e-paragraph\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Requirements:</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- INTEL + AMD CPU.</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Windows 10 - 11 | 1909 - 25H2.</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- SVM [AMD] / VT-X [INTEL] (BIOS) enabled.</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- 16GB RAM (or more).</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Hyper v disabled for AMD CPU only.</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Hyper v enabled for INTEL CPU only.</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Firmware in UEFI mode only for INTEL CPU.</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- The system use GPT format disk only for INTEL CPU.</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Secure Boot disabled.</span></p>",
     "currency": "USD",
     "path": "fortnite-private",
     "aliases": [
@@ -136,7 +125,7 @@ const FALLBACK_PRODUCTS = [
       {
         "id": 1210784,
         "name": "1 Day",
-        "price": 4.99,
+        "price": 7.49,
         "stock": -1
       },
       {
@@ -148,7 +137,13 @@ const FALLBACK_PRODUCTS = [
       {
         "id": 1210786,
         "name": "30 Days",
-        "price": 54.99,
+        "price": 59.99,
+        "stock": -1
+      },
+      {
+        "id": 1360871,
+        "name": "Lifetime",
+        "price": 299.99,
         "stock": -1
       }
     ]
@@ -156,9 +151,9 @@ const FALLBACK_PRODUCTS = [
   {
     "id": 740827,
     "name": "Ancient Delta Cheat",
-    "description": "",
+    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">instructions-https://telegra.ph/ANCIENT-FAQ-EU-07-20</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">loader-https://telegra.ph/INJECTION-07-21-4</span></p>",
     "currency": "USD",
-    "path": "delta-force-private",
+    "path": "delta-force",
     "aliases": [
       "delta-force",
       "delta-force-private",
@@ -171,7 +166,7 @@ const FALLBACK_PRODUCTS = [
       {
         "id": 1210803,
         "name": "1 Day",
-        "price": 4.99,
+        "price": 7.49,
         "stock": -1
       },
       {
@@ -183,7 +178,7 @@ const FALLBACK_PRODUCTS = [
       {
         "id": 1210805,
         "name": "30 Days",
-        "price": 54.99,
+        "price": 59.99,
         "stock": -1
       }
     ]
@@ -191,9 +186,9 @@ const FALLBACK_PRODUCTS = [
   {
     "id": 740833,
     "name": "Krush Rust Cheat",
-    "description": "",
+    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># Silent Aimbot</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Target (Closest to Crosshair, Closest to Player)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- FOV</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Hit Rate</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Hit Rate</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Only Visible</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Bone (Head, Neck...)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Show FOV</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Show Line</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># Aimbot</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Target (Closest to Crosshair, Closest to Player)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- FOV</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Smoothness</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Only Visible</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Prediction</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Bone (Head, Neck...)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Show FOV</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Show Line</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># Player ESP</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Name</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Skeleton</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Box (2D, 3D)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Visible Check</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Snap Line</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Head Circle</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- View Direction</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Hide Sleepers</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Skeleton Thickness</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Box Thickness</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Hide Teammates</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Team</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Held Item</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Text Outline</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Text Position (Top, Bottom)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Hotbar Items</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Hotbar Armor</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Hotbar Scale</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Max Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># NPC ESP</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Name</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Max Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Text Outline</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Skeleton</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Box (2D, 3D)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Snapline</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- View Direction</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Head Circle</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Skeleton Thickness</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Box Thickness</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Filter (Scientist, Tunnel Dweller, Bandit...)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">0</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># World ESP (items)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Name</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Amount</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Condition (Vertical, Horizontal, Text)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Icon</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Text Outline</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Category (Weapons, Ammo, Resources...)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Max Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># World ESP (raid)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Name</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Text Outline</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Filter (Tool Cupboard, Auto Turrent...)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Max Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># World ESP (ORES)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Name</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Icon</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Text Outline</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Filter (Stone, Metal, Sulfur)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Max Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># World ESP (LOOT)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Name</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Max Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Text Outline</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Filter (Standard Barrel, Biohazard Barrel...)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># World ESP (PLANTS)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Name</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Text Outline</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Filter (Hemp, Mushroom...)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Max Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># World ESP (VEHICLES</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Name</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Max Distance</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Text Outline</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># OOF ARROWS</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Player Arrows</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- NPC Arrows</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Shape (Filled, Outline, Dotted)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Radius</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Length</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Width</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># Exploits</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- No Recoil (Yaw, Pitch)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- No Recoil (Yaw, Pitch)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Bright Night</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Sky Color</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># Misc</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- CombatMode</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- CombatMode Filter (Dropped, Ores, Plants...)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Menu Bind</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Panic Mode Bind</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- ESP Background</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- ESP Background Opacity</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- ESP Background Categories (NPCs, Dropped, Ores...)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Crosshair Enabled</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Crosshair Gap</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Crosshair Length</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Crosshair Thickness</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Crosshair Dot</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Crosshair Outline</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Crosshair T-Shape</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Font Size</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- VSync</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- FPS Cap</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Menu DPI</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Menu Auto Scale</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Config Manager (Create, Load, Save...)</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p>",
     "currency": "USD",
-    "path": "rust-private",
+    "path": "rust",
     "aliases": [
       "rust",
       "rust-private"
@@ -205,7 +200,7 @@ const FALLBACK_PRODUCTS = [
       {
         "id": 1210815,
         "name": "1 Day",
-        "price": 4.99,
+        "price": 7.49,
         "stock": -1
       },
       {
@@ -217,7 +212,7 @@ const FALLBACK_PRODUCTS = [
       {
         "id": 1210817,
         "name": "30 Days",
-        "price": 54.99,
+        "price": 59.99,
         "stock": -1
       }
     ]
@@ -225,7 +220,7 @@ const FALLBACK_PRODUCTS = [
   {
     "id": 740845,
     "name": "Verse HWID Spoofer",
-    "description": "",
+    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># Requirements:</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- CPU: Intel / AMD</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- OS: Windows 10 / 11</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- USB 8GB</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Windows Re-install</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Flash BIOS</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># Supported Games:</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- League of Legends</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Fortnite (Tournaments included) </span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Apex Legends</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Rust</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Call of Duty</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Rainbow Six Seige</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Overwatch 2</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Dark and Darker</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- &amp; MORE</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># General Information:</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Works for all popular games</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- TPM Bypass NOT included</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Fortnite Tourney Support/Cleaners</span></p><p class=\"e-paragraph\" dir=\"ltr\"><br></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># Supported Motherboards:</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">*TESTED AND WORKING ON MOTHERBOARDS*</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- ASUS</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Gigabyte</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Colorful</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Biostar</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- MSI</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Evga</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Asrock</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Microstar</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Aorus</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- HP</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">-&gt; For Lenovo/Acer/Dell please open ticket first before purchase!</span></p>",
     "currency": "USD",
     "path": "hwid-spoofer",
     "aliases": [
@@ -250,75 +245,33 @@ const FALLBACK_PRODUCTS = [
         "stock": -1
       }
     ]
-  },
-  {
-    "id": 746570,
-    "name": "Valorant Private",
-    "description": "",
-    "currency": "USD",
-    "path": "valorant-private",
-    "aliases": [
-      "valorant-private",
-      "valorant"
-    ],
-    "images": [
-      "https://api.sellauth.com/storage/images/952749.webp"
-    ],
-    "variants": [
-      {
-        "id": 1224111,
-        "name": "1 Day",
-        "price": 9.99,
-        "stock": -1
-      },
-      {
-        "id": 1224112,
-        "name": "7 Days",
-        "price": 29.99,
-        "stock": -1
-      },
-      {
-        "id": 1224113,
-        "name": "30 Days",
-        "price": 54.99,
-        "stock": -1
-      },
-      {
-        "id": 1224114,
-        "name": "Lifetime",
-        "price": 99.99,
-        "stock": -1
-      }
-    ]
   }
 ];
 
 const API_KEY = process.env.SELLAUTH_API_KEY || "5959307|3C5nX16iKAnZWTam7Mo3Q6o20GapFtnyLwEHtjfY71a1fd57";
 const SHOP_ID = process.env.SELLAUTH_SHOP_ID || "223549";
 
-// Map URL path slugs to SellAuth product path strings
+// Map URL path slugs to exact SellAuth dashboard product path strings
 const SLUG_TO_PATH = {
-  'rust': 'rust-private',
-  'rust-private': 'rust-private',
-  'r6': 'r6-private',
-  'rainbow-six-siege': 'r6-private',
-  'r6-private': 'r6-private',
-  'apex': 'apex-pro',
-  'apex-legends': 'apex-pro',
-  'apex-pro': 'apex-pro',
-  'arc': 'arc-raiders-elite',
-  'arc-raiders': 'arc-raiders-elite',
-  'arc-raiders-elite': 'arc-raiders-elite',
+  'rust': 'rust',
+  'rust-private': 'rust',
+  'r6': 'rainbow-six-siege',
+  'rainbow-six-siege': 'rainbow-six-siege',
+  'r6-private': 'rainbow-six-siege',
+  'apex': 'apex-legends',
+  'apex-legends': 'apex-legends',
+  'apex-pro': 'apex-legends',
+  'arc': 'arc-raiders',
+  'arc-raiders': 'arc-raiders',
+  'arc-raiders-elite': 'arc-raiders',
   'fortnite': 'fortnite-private',
   'fortnite-private': 'fortnite-private',
-  'delta': 'delta-force-private',
-  'delta-force': 'delta-force-private',
-  'delta-force-private': 'delta-force-private',
+  'delta': 'delta-force',
+  'delta-force': 'delta-force',
+  'delta-force-private': 'delta-force',
   'woofer': 'hwid-spoofer',
   'spoofer': 'hwid-spoofer',
-  'hwid-spoofer': 'hwid-spoofer',
-  'valorant': 'valorant-private',
-  'valorant-private': 'valorant-private'
+  'hwid-spoofer': 'hwid-spoofer'
 };
 
 const PRODUCT_ASSETS = {
@@ -421,13 +374,7 @@ module.exports = (req, res) => {
   }
   slug = (slug || '').toLowerCase();
 
-  const sellauthPath = SLUG_TO_PATH[slug];
-  if (!sellauthPath) {
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Product path configuration missing.');
-    return;
-  }
+  const sellauthPath = SLUG_TO_PATH[slug] || slug;
 
   getProducts((err, products) => {
     if (err || !products) {
@@ -438,12 +385,17 @@ module.exports = (req, res) => {
       return;
     }
 
+    const slugClean = slug.replace(/-(private|pro|elite)$/, '');
+
     const liveProd = products.find(p => {
       if (!p) return false;
-      if (p.path === sellauthPath || p.path === slug) return true;
+      const pPath = (p.path || '').toLowerCase();
+      const pPathClean = pPath.replace(/-(private|pro|elite)$/, '');
+      if (pPath === sellauthPath || pPath === slug || pPathClean === slugClean) return true;
       if (Array.isArray(p.aliases) && (p.aliases.includes(slug) || p.aliases.includes(sellauthPath))) return true;
       return false;
     });
+
     if (!liveProd) {
       res.statusCode = 404;
       res.setHeader('Content-Type', 'text/plain');
@@ -466,7 +418,7 @@ module.exports = (req, res) => {
         prodImages = [PRODUCT_ASSETS[slug].image];
       }
       if (!prodImages.length) {
-        prodImages = ['/storage/images/rust.jpg'];
+        prodImages = ['https://api.sellauth.com/storage/images/944529.webp'];
       }
       const localAsset = {
         image: prodImages[0],
