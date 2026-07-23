@@ -28,13 +28,27 @@ const MIME_TYPES = {
 
 // Map URL path slugs to SellAuth product path strings
 const SLUG_TO_PATH = {
-  'rust': 'rust',
-  'r6': 'rainbow-six-siege',
-  'apex': 'apex-legends',
-  'arc': 'arc-raiders',
+  'rust': 'rust-private',
+  'rust-private': 'rust-private',
+  'r6': 'r6-private',
+  'rainbow-six-siege': 'r6-private',
+  'r6-private': 'r6-private',
+  'apex': 'apex-pro',
+  'apex-legends': 'apex-pro',
+  'apex-pro': 'apex-pro',
+  'arc': 'arc-raiders-elite',
+  'arc-raiders': 'arc-raiders-elite',
+  'arc-raiders-elite': 'arc-raiders-elite',
   'fortnite': 'fortnite-private',
-  'delta': 'delta-force',
-  'woofer': 'hwid-spoofer'
+  'fortnite-private': 'fortnite-private',
+  'delta': 'delta-force-private',
+  'delta-force': 'delta-force-private',
+  'delta-force-private': 'delta-force-private',
+  'woofer': 'hwid-spoofer',
+  'spoofer': 'hwid-spoofer',
+  'hwid-spoofer': 'hwid-spoofer',
+  'valorant': 'valorant-private',
+  'valorant-private': 'valorant-private'
 };
 
 // Mapping of slugs to our local box art images and local custom description
@@ -72,6 +86,27 @@ const PRODUCT_ASSETS = {
 // Cache SellAuth products list to minimize latency
 let cachedProducts = null;
 let lastFetchTime = 0;
+
+function getProducts(callback) {
+  getProducts((err, products) => {
+    if (!err && products && Array.isArray(products) && products.length > 0) {
+      return callback(null, products);
+    }
+    console.warn("SellAuth live API failed or rate-limited, reading sellauth_fallback.json");
+    try {
+      const fallbackPath = path.join(process.cwd(), 'sellauth_fallback.json');
+      if (fs.existsSync(fallbackPath)) {
+        const fallbackData = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
+        if (Array.isArray(fallbackData) && fallbackData.length > 0) {
+          return callback(null, fallbackData);
+        }
+      }
+    } catch (e) {
+      console.error("Fallback load error:", e);
+    }
+    callback(err || new Error("Unable to load product data"), null);
+  });
+}
 
 function fetchProductsFromSellAuth(callback) {
   const now = Date.now();
@@ -131,7 +166,7 @@ const server = http.createServer((req, res) => {
 
     if (sellauthPath) {
       // 1. Fetch live products from SellAuth API
-      fetchProductsFromSellAuth((err, products) => {
+      getProducts((err, products) => {
         if (err || !products) {
           console.error("SellAuth fetch failed, falling back to local simulation:", err);
           // If SellAuth API is down, fallback to 500 error
@@ -141,7 +176,12 @@ const server = http.createServer((req, res) => {
         }
 
         // Find the matched product in our live shop catalog
-        const liveProd = products.find(p => p.path === sellauthPath);
+        const liveProd = products.find(p => {
+      if (!p) return false;
+      if (p.path === sellauthPath || p.path === slug) return true;
+      if (Array.isArray(p.aliases) && (p.aliases.includes(slug) || p.aliases.includes(sellauthPath))) return true;
+      return false;
+    });
         if (!liveProd) {
           res.writeHead(404, { 'Content-Type': 'text/plain' });
           res.end('Product not found in SellAuth catalog.');
@@ -157,7 +197,18 @@ const server = http.createServer((req, res) => {
             return;
           }
 
-          const localAsset = PRODUCT_ASSETS[slug] || { image: liveProd.images[0]?.url, desc: liveProd.description };
+          let prodImages = (liveProd.images || []).map(img => typeof img === 'string' ? img : img.url).filter(Boolean);
+      if (!prodImages.length && PRODUCT_ASSETS[slug]) {
+        prodImages = [PRODUCT_ASSETS[slug].image];
+      }
+      if (!prodImages.length) {
+        prodImages = ['/storage/images/rust.jpg'];
+      }
+      const localAsset = {
+        image: prodImages[0],
+        images: prodImages,
+        desc: (PRODUCT_ASSETS[slug] && PRODUCT_ASSETS[slug].desc) ? PRODUCT_ASSETS[slug].desc : (liveProd.description || '')
+      };
 
           // Build our dynamically integrated product JSON
           const productJson = {
@@ -180,7 +231,7 @@ const server = http.createServer((req, res) => {
             max_price_with_discount: parseFloat(liveProd.variants[liveProd.variants.length - 1]?.price || 0),
             currency: liveProd.currency || "USD",
             image_url: null,
-            image_urls: [localAsset.image],
+            image_urls: localAsset.images,
             sort_priority: 0,
             deliverables: null,
             stock: -1,

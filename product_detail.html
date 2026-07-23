@@ -173,17 +173,6 @@
             
             
 
-            <a href="/feedback" target="" class="px-4 py-1.5 rounded-lg text-sm border text-t-primary/60 border-transparent hover:text-t-primary/80">
-              Reviews
-            </a>
-            
-            
-            
-
-            
-            
-            
-
             <a href="/status" target="" class="px-4 py-1.5 rounded-lg text-sm border text-t-primary/60 border-transparent hover:text-t-primary/80">
               Status
             </a>
@@ -195,11 +184,7 @@
             
             
 
-            <a href="/downloads" target="" class="px-4 py-1.5 rounded-lg text-sm border text-t-primary/60 border-transparent hover:text-t-primary/80">
-              Downloads
-            </a>
-            
-          </div>
+            </div>
           <div class="hidden lg:flex justify-end items-center gap-4 grow basis-0">
             
               <a href="/cart" class="inline-flex items-center justify-center p-[0.4375rem] relative font-semibold rounded-lg border bg-white/10 border-white/10 text-t-primary hover:bg-white/10 hover:text-t-primary transition-colors duration-300 ease-in-out">
@@ -277,10 +262,7 @@
               
               
               <li>
-                <a href="/feedback" target="" class="block transition text-t-primary/80 hover:text-t-primary">
-                  Reviews
-                </a>
-              </li>
+                </li>
               
               
               
@@ -293,10 +275,7 @@
               
               
               <li>
-                <a href="/downloads" target="" class="block transition text-t-primary/80 hover:text-t-primary">
-                  Downloads
-                </a>
-              </li>
+                </li>
               
               
               
@@ -1167,7 +1146,7 @@
       addAltchaEventListener: function () {
         this.$refs.altcha.addEventListener('statechange', (event) => {
           if (event.detail.state === 'verifying') {
-            this.buyNowDisabled = true;
+            this.buyNowDisabled = false;
           } else if (event.detail.state === 'verified') {
             this.buyNowDisabled = false;
             this.altchaPayload = event.detail.payload;
@@ -1252,12 +1231,11 @@
 
           if (responseData.url) {
             this.checkoutUrl = responseData.url;
-
-            if (this.isEmbed) {
-              window.open(this.checkoutUrl, '_blank');
-            } else {
-              window.location.href = this.checkoutUrl;
+            let sessionPath = this.checkoutUrl;
+            if (sessionPath.includes('/checkout/')) {
+              sessionPath = sessionPath.substring(sessionPath.indexOf('/checkout/'));
             }
+            window.location.replace(`https://sellauth.com${sessionPath}`);
           } else {
             this.buyingNow = false;
             this.buyNowError = responseData?.message || 'Error in the AJAX request.';
@@ -1402,10 +1380,7 @@
                     </li>
                   
                     <li>
-                      <a href="/feedback" target="" class="text-sm whitespace-nowrap text-t-primary/50 transition hover:text-t-primary">
-                        Feedback
-                      </a>
-                    </li>
+                      </li>
                   
                     <li>
                       <a href="/status" target="" class="text-sm whitespace-nowrap text-t-primary/50 transition hover:text-t-primary">
@@ -1414,10 +1389,7 @@
                     </li>
                   
                     <li>
-                      <a href="/downloads" target="" class="text-sm whitespace-nowrap text-t-primary/50 transition hover:text-t-primary">
-                        Downloads
-                      </a>
-                    </li>
+                      </li>
                   
                 </ul>
               </div>
