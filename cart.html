@@ -16,100 +16,116 @@
         --cl-background: 3,7,18;
         --cl-t-primary: 255,255,255;
       }
-      body { font-family: 'Geist', sans-serif; background-color: rgb(3,7,18); color: #fff; }
+      body {
+        font-family: 'Geist', sans-serif;
+        background-color: #030712;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+      .cart-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      }
+      .cart-card:hover {
+        border-color: rgba(236, 72, 153, 0.3);
+      }
+      .summary-card {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(16px);
+      }
     </style>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <body class="text-t-primary min-h-screen flex flex-col justify-between" style="background-color: rgb(3,7,18);">
+  <body class="text-t-primary min-h-screen flex flex-col justify-between bg-[#030712]">
     
     <div id="app" x-data="cartPage">
       
       <!-- Navbar Header -->
-      <header class="fixed top-0 inset-x-0 z-20 bg-background/50 backdrop-blur-2xl border-b border-white/5">
-        <nav class="mx-auto max-w-7xl p-4">
-          <div class="flex justify-between items-center gap-6">
-            <a href="/" class="flex justify-start items-center gap-4">
-              <img src="/assets/197035/logo.png?v=2026" alt="RiftCheats" class="max-h-10 rounded-md" />
-            </a>
-            <div class="flex justify-start items-center gap-6 font-medium text-sm">
-              <a href="/" class="text-t-primary/80 hover:text-t-primary transition">Home</a>
-              <a href="/#products" class="text-t-primary/80 hover:text-t-primary transition">Products</a>
-              <a href="/status" class="text-t-primary/80 hover:text-t-primary transition">Status</a>
-            </div>
+      <header class="fixed top-0 inset-x-0 z-50 bg-[#030712]/80 backdrop-blur-2xl border-b border-white/5">
+        <nav class="mx-auto max-w-7xl px-4 sm:px-6 h-20 flex justify-between items-center">
+          <a href="/" class="flex items-center gap-3">
+            <img src="/assets/197035/logo.png?v=2026" alt="RiftCheats" class="h-9 w-auto rounded-md" />
+          </a>
+          <div class="flex items-center gap-6 font-medium text-sm">
+            <a href="/" class="text-white/70 hover:text-white transition">Home</a>
+            <a href="/#products" class="text-white/70 hover:text-white transition">Products</a>
+            <a href="/status" class="text-white/70 hover:text-white transition">Status</a>
           </div>
         </nav>
       </header>
 
       <!-- Main Cart Content -->
-      <main class="pt-36 pb-24 max-w-7xl mx-auto px-4 w-full">
+      <main class="pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6 w-full">
         
-        <div class="mb-8" data-aos="fade-down">
-          <h1 class="text-3xl md:text-5xl font-semibold tracking-tighter text-transparent bg-clip-text bg-gradient-text-title animate-text-gradient">
+        <div class="mb-10">
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
             Shopping Cart
           </h1>
-          <p class="text-t-primary/60 text-sm mt-2">Review your items and proceed to secure checkout</p>
+          <p class="text-white/50 text-sm mt-2">Review your items and proceed to secure checkout</p>
         </div>
 
         <!-- Empty Cart View -->
         <template x-if="items.length === 0">
-          <div class="p-12 sm:p-16 bg-gradient-card backdrop-blur-sm before-border-wh rounded-2xl text-center flex flex-col items-center gap-5">
+          <div class="p-12 sm:p-16 cart-card rounded-2xl text-center flex flex-col items-center gap-5">
             <div class="size-16 rounded-2xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center text-accent-500">
               <svg xmlns="http://www.w3.org/2000/svg" class="size-8" viewBox="0 0 24 24"><path fill="currentColor" d="M7 22q-.825 0-1.412-.587T5 20t.588-1.412T7 18t1.413.588T9 20t-.587 1.413T7 22m10 0q-.825 0-1.412-.587T15 20t.588-1.412T17 18t1.413.588T19 20t-.587 1.413T17 22M6.15 6l2.4 5h7l2.75-5zM5.2 4h14.75q.575 0 .875.513t.025 1.037l-3.55 6.4q-.275.5-.737.775T15.55 13H8.1L7 15h11q.425 0 .713.288T19 16t-.288.713T18 17H7q-1.125 0-1.7-.987t-.05-1.963L6.6 11.6L3 4H2q-.425 0-.712-.288T1 3t.288-.712T2 2h1.625q.275 0 .525.15t.375.425zm3.35 7h7z"/></svg>
             </div>
-            <p class="text-xl font-semibold text-t-primary">Your cart is currently empty</p>
-            <p class="text-sm text-t-primary/50 -mt-2">Choose a product from our catalog to get started</p>
-            <a href="/#products" class="mt-2 px-6 py-3 rounded-xl bg-accent-500 hover:bg-accent-600 font-semibold text-white transition-all duration-300 shadow-lg shadow-accent-500/20">
+            <p class="text-xl font-bold text-white">Your cart is currently empty</p>
+            <p class="text-sm text-white/50 -mt-2">Select a product from our store to add it to your cart</p>
+            <a href="/#products" class="mt-2 px-6 py-3 rounded-xl bg-accent-500 hover:bg-accent-600 font-bold text-white transition-all duration-300 shadow-lg shadow-accent-500/25">
               Browse Products
             </a>
           </div>
         </template>
 
-        <!-- Cart Items & Summary View -->
+        <!-- Cart Items & Summary Layout -->
         <template x-if="items.length > 0">
-          <div class="flex flex-col lg:flex-row gap-8">
+          <div class="flex flex-col lg:flex-row gap-8 items-start">
             
             <!-- Items List -->
             <div class="w-full lg:w-[65%] flex flex-col gap-4">
               <template x-for="(item, index) in items" :key="item.variantId">
-                <div class="p-4 sm:p-6 bg-gradient-card backdrop-blur-sm before-border-wh rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="p-4 sm:p-6 cart-card rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 transition-all duration-300">
                   
-                  <div class="flex items-center gap-4 w-full sm:w-auto">
-                    <!-- Product Image -->
-                    <div class="size-20 sm:size-24 rounded-xl border border-white/5 overflow-hidden flex-shrink-0 bg-black/40">
-                      <img :src="item.image" :alt="item.name" class="size-full object-cover" />
+                  <div class="flex items-center gap-5 w-full sm:w-auto">
+                    <!-- Product Image Container -->
+                    <div class="w-20 h-24 sm:w-24 sm:h-28 rounded-xl border border-white/10 bg-black/60 flex items-center justify-center p-1.5 shrink-0 overflow-hidden">
+                      <img :src="item.image" :alt="item.name" class="h-full w-auto object-contain drop-shadow-md" />
                     </div>
                     
                     <!-- Details -->
-                    <div class="flex flex-col min-w-0">
-                      <h3 class="text-lg font-semibold text-t-primary leading-tight" x-text="item.name"></h3>
-                      <div class="flex items-center gap-2 mt-1">
-                        <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-semibold bg-accent-500/10 text-accent-500 border border-accent-500/20" x-text="item.variantName"></span>
+                    <div class="flex flex-col">
+                      <h3 class="text-lg font-bold text-white leading-snug" x-text="item.name"></h3>
+                      <div class="flex items-center gap-2 mt-1.5">
+                        <span class="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-accent-500/15 text-accent-400 border border-accent-500/30" x-text="item.variantName"></span>
                       </div>
-                      <p class="text-xs text-t-primary/50 mt-2">Unit Price: <span class="text-t-primary font-semibold" x-text="formatCurrency(item.unitPrice)"></span></p>
+                      <p class="text-xs text-white/50 mt-2">Unit Price: <span class="text-white font-semibold" x-text="formatCurrency(item.unitPrice)"></span></p>
                     </div>
                   </div>
 
-                  <!-- Controls & Subtotal -->
-                  <div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto border-t sm:border-t-0 pt-4 sm:pt-0 border-white/5">
+                  <!-- Controls & Price -->
+                  <div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto border-t sm:border-t-0 pt-4 sm:pt-0 border-white/10">
                     <!-- Quantity Buttons -->
-                    <div class="flex items-center gap-2 bg-white/5 border border-white/5 rounded-xl p-1">
-                      <button @click="updateQty(index, item.quantity - 1)" type="button" class="size-8 flex justify-center items-center hover:bg-white/10 rounded-lg text-t-primary transition">-</button>
-                      <span class="px-2 font-semibold text-t-primary text-sm min-w-[1.5rem] text-center" x-text="item.quantity"></span>
-                      <button @click="updateQty(index, item.quantity + 1)" type="button" class="size-8 flex justify-center items-center hover:bg-white/10 rounded-lg text-t-primary transition">+</button>
+                    <div class="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl p-1">
+                      <button @click="updateQty(index, item.quantity - 1)" type="button" class="size-8 flex justify-center items-center hover:bg-white/10 rounded-lg text-white font-bold transition">-</button>
+                      <span class="px-2 font-bold text-white text-sm min-w-[1.5rem] text-center" x-text="item.quantity"></span>
+                      <button @click="updateQty(index, item.quantity + 1)" type="button" class="size-8 flex justify-center items-center hover:bg-white/10 rounded-lg text-white font-bold transition">+</button>
                     </div>
 
                     <!-- Item Total -->
-                    <div class="text-right min-w-[5rem]">
-                      <p class="text-lg font-bold text-t-primary" x-text="formatCurrency(item.unitPrice * item.quantity)"></p>
+                    <div class="text-right min-w-[5.5rem]">
+                      <p class="text-xl font-extrabold text-white" x-text="formatCurrency(item.unitPrice * item.quantity)"></p>
                     </div>
 
-                    <!-- Remove -->
-                    <button @click="removeItem(index)" type="button" class="p-2 text-t-primary/40 hover:text-red-400 transition">
+                    <!-- Delete Button -->
+                    <button @click="removeItem(index)" type="button" class="p-2 text-white/30 hover:text-red-400 transition-colors">
                       <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24"><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4q-.425 0-.712-.288T3 5t.288-.712T4 4h4.5q0-.425.288-.712T9.5 3h5q.425 0 .713.288T15.5 4H20q.425 0 .713.288T21 5t-.288.713T20 6h-1v13q0 .825-.587 1.413T17 21zm2-4q0 .425.288.713T10 18t.713-.288T11 17V9q0-.425-.288-.712T10 8t-.712.288T9 9zm4 0q0 .425.288.713T14 18t.713-.288T15 17V9q0-.425-.288-.712T14 8t-.712.288T13 9z"/></svg>
                     </button>
                   </div>
@@ -117,35 +133,35 @@
                 </div>
               </template>
 
-              <div class="flex justify-between items-center px-2">
-                <button @click="clearCart" type="button" class="text-xs text-t-primary/40 hover:text-t-primary transition">Clear Entire Cart</button>
-                <a href="/#products" class="text-xs text-accent-500 hover:underline">Add More Products</a>
+              <div class="flex justify-between items-center px-1 pt-1">
+                <button @click="clearCart" type="button" class="text-xs text-white/40 hover:text-white transition">Clear Cart</button>
+                <a href="/#products" class="text-xs text-accent-400 hover:underline">← Continue Shopping</a>
               </div>
             </div>
 
             <!-- Order Summary Sidebar -->
-            <div class="w-full lg:w-[35%] flex flex-col gap-6">
-              <div class="p-6 bg-gradient-card backdrop-blur-sm before-border-wh rounded-2xl flex flex-col gap-5">
-                <h2 class="text-xl font-semibold text-t-primary border-b border-white/5 pb-3">Order Summary</h2>
+            <div class="w-full lg:w-[35%]">
+              <div class="p-6 summary-card rounded-2xl flex flex-col gap-5 sticky top-28">
+                <h2 class="text-xl font-bold text-white border-b border-white/10 pb-3">Order Summary</h2>
                 
                 <div class="flex justify-between items-center text-sm">
-                  <span class="text-t-primary/60">Subtotal</span>
-                  <span class="font-semibold text-t-primary" x-text="formatCurrency(calculateTotal())"></span>
+                  <span class="text-white/60">Subtotal</span>
+                  <span class="font-bold text-white" x-text="formatCurrency(calculateTotal())"></span>
                 </div>
 
                 <div class="flex justify-between items-center text-sm">
-                  <span class="text-t-primary/60">Automated Delivery</span>
-                  <span class="text-accent-500 font-semibold">Free Instant</span>
+                  <span class="text-white/60">Automated Delivery</span>
+                  <span class="text-accent-400 font-semibold">Free Instant</span>
                 </div>
 
-                <div class="border-t border-white/5 pt-4 flex justify-between items-baseline">
-                  <span class="text-base font-semibold text-t-primary">Total</span>
-                  <span class="text-2xl font-bold text-t-primary" x-text="formatCurrency(calculateTotal())"></span>
+                <div class="border-t border-white/10 pt-4 flex justify-between items-baseline">
+                  <span class="text-base font-bold text-white">Total</span>
+                  <span class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-accent-300 to-accent-500" x-text="formatCurrency(calculateTotal())"></span>
                 </div>
 
                 <!-- Altcha Widget Container -->
-                <div class="mt-2">
-                  <div x-show="!altchaPayload" class="text-xs text-t-primary/50 mb-2">Security Verification:</div>
+                <div class="mt-1">
+                  <div x-show="!altchaPayload" class="text-xs text-white/50 mb-2">Security Verification:</div>
                   <altcha-widget
                     challengeurl="https://api-internal-3.sellauth.com/v1/altcha?shop_id=223549"
                     auto="onload"
@@ -161,21 +177,21 @@
                   @click="proceedToCheckout"
                   type="button"
                   :disabled="checkingOut || !altchaPayload"
-                  class="w-full py-4 rounded-xl bg-accent-500 hover:bg-accent-600 disabled:opacity-50 font-semibold text-white transition-all duration-300 shadow-lg shadow-accent-500/20 flex justify-center items-center gap-2 mt-2"
+                  class="w-full py-4 rounded-xl bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 disabled:opacity-50 font-bold text-white transition-all duration-300 shadow-lg shadow-accent-500/25 flex justify-center items-center gap-2"
                 >
                   <span x-text="checkingOut ? 'Creating Checkout...' : 'Proceed to Checkout »'"></span>
                 </button>
 
-                <p x-show="checkoutError" x-text="checkoutError" class="text-xs text-red-500 text-center mt-1"></p>
+                <p x-show="checkoutError" x-text="checkoutError" class="text-xs text-red-400 text-center mt-1"></p>
 
-                <!-- Value Props -->
-                <div class="grid grid-cols-2 gap-2 mt-2 pt-4 border-t border-white/5 text-xs text-t-primary/60">
+                <!-- Features -->
+                <div class="grid grid-cols-2 gap-3 pt-4 border-t border-white/10 text-xs text-white/60">
                   <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-accent-500 shrink-0" viewBox="0 0 24 24"><path fill="currentColor" d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66c.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-accent-400 shrink-0" viewBox="0 0 24 24"><path fill="currentColor" d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66c.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21"/></svg>
                     <span>Instant Key</span>
                   </div>
                   <div class="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-accent-500 shrink-0" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5zm-2 16l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-4 text-accent-400 shrink-0" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5zm-2 16l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg>
                     <span>Undetected</span>
                   </div>
                 </div>
@@ -189,12 +205,12 @@
       </main>
 
       <!-- Footer -->
-      <footer class="border-t border-white/5 py-8 text-center text-xs text-t-primary/40">
+      <footer class="border-t border-white/5 py-8 text-center text-xs text-white/40">
         <p>© 2026 RiftCheats. All rights reserved.</p>
       </footer>
     </div>
 
-    <!-- Product Database Map -->
+    <!-- Product Catalog Database -->
     <script>
       const CATALOG_MAP = {
         651369: {
