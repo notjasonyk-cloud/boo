@@ -499,6 +499,8 @@ module.exports = (req, res) => {
       output = output.replace(productPattern, `product: ${JSON.stringify(productJson)}, productAddons`);
 
       output = output.replace(/R6 Exodus Lite/g, liveProd.name);
+            output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
+      output = output.replace(/\/storage\/images\/rust\.jpg/g, localAsset.image);
       output = output.replace(/External Rust/g, liveProd.name);
       output = output.replace(/Apex Internal/g, liveProd.name);
 
