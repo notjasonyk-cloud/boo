@@ -1170,7 +1170,7 @@
         });
       },
 
-                              buyNow: async function () {
+                                    buyNow: async function () {
         if (this.buyingNow) {
           return;
         }
@@ -1233,7 +1233,7 @@
             if (sessionUrl.includes('/checkout/')) {
               sessionId = sessionUrl.substring(sessionUrl.indexOf('/checkout/') + 10);
             }
-            window.location.href = `https://sellauth.com/checkout/${sessionId}?embed=1`;
+            window.location.href = `https://sellauth.com/checkout/${sessionId}`;
           } else {
             this.buyingNow = false;
             this.buyNowError = responseData?.message || 'Error in the AJAX request.';
