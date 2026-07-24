@@ -243,37 +243,11 @@
           altchaPayload: null,
           checkingOut: false,
           checkoutError: '',
-          init() {
-            let rawItems = [];
-            try {
-              rawItems = JSON.parse(localStorage.getItem('cart') || '[]');
-            } catch (e) {
-              rawItems = [];
-            }
-
-            this.items = rawItems.map(item => {
-              const prod = CATALOG_MAP[item.productId] || {};
-              const variant = (prod.variants && prod.variants[item.variantId]) || {};
-              return {
-                productId: item.productId,
-                variantId: item.variantId,
-                quantity: item.quantity || 1,
-                name: prod.name || (`Product #${item.productId}`),
-                image: prod.image || '/storage/images/rust.jpg',
-                variantName: variant.name || 'Key Variant',
-                unitPrice: variant.price || 7.49
-              };
-            });
-
-            this.$nextTick(() => {
-              if (this.$refs.altcha) {
-                this.$refs.altcha.addEventListener('statechange', (event) => {
-                  if (event.detail.state === 'verified') {
-                    this.altchaPayload = event.detail.payload;
-                  }
-                });
-              }
-            });
+                    init() {
+            localStorage.removeItem('cart');
+            localStorage.removeItem('kmrza_basket');
+            localStorage.removeItem('kmrza_basket_backup');
+            this.items = [];
           },
           formatCurrency(amt) {
             return '$' + Number(amt).toFixed(2);
@@ -293,25 +267,10 @@
             this.items.splice(index, 1);
             this.saveToStorage();
           },
-                    async proceedToCheckout() {
-            if (this.items.length === 0 || this.checkingOut) return;
-            this.checkingOut = true;
-            this.checkoutError = '';
-            window.location.href = 'https://riftcheats.mykomerza.com';
-          },
-          clearCart() {
-            this.items = [];
-            this.saveToStorage();
-          },
-          saveToStorage() {
-            const raw = this.items.map(i => ({ productId: i.productId, variantId: i.variantId, quantity: i.quantity }));
-            localStorage.setItem('cart', JSON.stringify(raw));
-          },
                               async proceedToCheckout() {
-            if (this.items.length === 0 || this.checkingOut) return;
+            if (this.checkingOut) return;
             this.checkingOut = true;
-            this.checkoutError = '';
-            window.location.href = 'https://checkout.komerza.com/checkout/cfac2054-69bd-4f6a-a535-72fe58789383';
+            window.location.href = 'https://riftcheats.mykomerza.com';
           }
         });
       });

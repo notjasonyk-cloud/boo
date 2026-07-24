@@ -357,12 +357,9 @@
         <div x-data="productForm" class="flex flex-col lg:flex-row gap-6 lg:gap-8">
 
           
-          <div class="w-full lg:w-[40%] flex-shrink-0">
-            
-              <div class="w-full lg:w-[40%] flex-shrink-0">
-              <div class="aspect-group-card-image rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/20">
-                <img :src="localAsset ? localAsset.image : '/storage/images/rust.jpg'" src="/storage/images/rust.jpg" class="w-full h-full object-cover rounded-2xl" alt="Product Image" />
-              </div>
+                    <div class="w-full lg:w-[40%] flex-shrink-0">
+            <div class="aspect-group-card-image rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/20">
+              <img :src="localAsset.image" src="/storage/images/rust.jpg" class="w-full h-full object-cover rounded-2xl" alt="Product Image" />
             </div>
           </div>
 
@@ -883,9 +880,57 @@
 <script >
   document.addEventListener('alpine:init', () => {
     Alpine.data('productForm', () => ({
-            get localAsset() {
+                        get localAsset() {
         const map = {
-          'rust': { name: 'Krush Rust Cheat', image: '/storage/images/rust.jpg' },
+          'rust': { name: 'Krush Rust Cheat', image: '/storage/images/rust.jpg', slug: 'krush-rust-cheat' },
+          'krush-rust-cheat': { name: 'Krush Rust Cheat', image: '/storage/images/rust.jpg', slug: 'krush-rust-cheat' },
+          'external-rust': { name: 'Krush Rust Cheat', image: '/storage/images/rust.jpg', slug: 'krush-rust-cheat' },
+          'r6': { name: 'Crusader R6 Cheat', image: '/storage/images/r6.jpg', slug: 'crusader-r6-cheat' },
+          'crusader-r6-cheat': { name: 'Crusader R6 Cheat', image: '/storage/images/r6.jpg', slug: 'crusader-r6-cheat' },
+          'siege': { name: 'Crusader R6 Cheat', image: '/storage/images/r6.jpg', slug: 'crusader-r6-cheat' },
+          'apex': { name: 'Ancient Apex Cheat', image: '/storage/images/apex.png', slug: 'ancient-apex-cheat' },
+          'ancient-apex-cheat': { name: 'Ancient Apex Cheat', image: '/storage/images/apex.png', slug: 'ancient-apex-cheat' },
+          'krush-apex-cheat': { name: 'Ancient Apex Cheat', image: '/storage/images/apex.png', slug: 'ancient-apex-cheat' },
+          'arc': { name: 'Krush Arc Cheat', image: '/storage/images/arc.png', slug: 'krush-arc-cheat' },
+          'krush-arc-cheat': { name: 'Krush Arc Cheat', image: '/storage/images/arc.png', slug: 'krush-arc-cheat' },
+          'fortnite': { name: 'Disconnect Fortnite Cheat', image: '/storage/images/fortnite.png', slug: 'disconnect-fortnite-cheat' },
+          'disconnect-fortnite-cheat': { name: 'Disconnect Fortnite Cheat', image: '/storage/images/fortnite.png', slug: 'disconnect-fortnite-cheat' },
+          'delta': { name: 'Ancient Delta Cheat', image: '/storage/images/delta.png', slug: 'ancient-delta-cheat' },
+          'ancient-delta-cheat': { name: 'Ancient Delta Cheat', image: '/storage/images/delta.png', slug: 'ancient-delta-cheat' },
+          'spoofer': { name: 'Verse HWID Spoofer', image: '/storage/images/woofer.png', slug: 'hwid-spoofer' },
+          'hwid-spoofer': { name: 'Verse HWID Spoofer', image: '/storage/images/woofer.png', slug: 'hwid-spoofer' },
+          'woofer': { name: 'Verse HWID Spoofer', image: '/storage/images/woofer.png', slug: 'hwid-spoofer' }
+        };
+        const pStr = (this.product.path || this.product.name || window.location.pathname || '').toLowerCase();
+        for (const k in map) {
+          if (pStr.includes(k)) return map[k];
+        }
+        return { name: this.product.name, image: '/storage/images/rust.jpg', slug: 'krush-rust-cheat' };
+      },
+          'krush-rust-cheat': { name: 'Krush Rust Cheat', image: '/storage/images/rust.jpg', slug: 'krush-rust-cheat' },
+          'external-rust': { name: 'Krush Rust Cheat', image: '/storage/images/rust.jpg', slug: 'krush-rust-cheat' },
+          'r6': { name: 'Crusader R6 Cheat', image: '/storage/images/r6.jpg', slug: 'crusader-r6-cheat' },
+          'crusader-r6-cheat': { name: 'Crusader R6 Cheat', image: '/storage/images/r6.jpg', slug: 'crusader-r6-cheat' },
+          'siege': { name: 'Crusader R6 Cheat', image: '/storage/images/r6.jpg', slug: 'crusader-r6-cheat' },
+          'apex': { name: 'Ancient Apex Cheat', image: '/storage/images/apex.png', slug: 'ancient-apex-cheat' },
+          'ancient-apex-cheat': { name: 'Ancient Apex Cheat', image: '/storage/images/apex.png', slug: 'ancient-apex-cheat' },
+          'krush-apex-cheat': { name: 'Ancient Apex Cheat', image: '/storage/images/apex.png', slug: 'ancient-apex-cheat' },
+          'arc': { name: 'Krush Arc Cheat', image: '/storage/images/arc.png', slug: 'krush-arc-cheat' },
+          'krush-arc-cheat': { name: 'Krush Arc Cheat', image: '/storage/images/arc.png', slug: 'krush-arc-cheat' },
+          'fortnite': { name: 'Disconnect Fortnite Cheat', image: '/storage/images/fortnite.png', slug: 'disconnect-fortnite-cheat' },
+          'disconnect-fortnite-cheat': { name: 'Disconnect Fortnite Cheat', image: '/storage/images/fortnite.png', slug: 'disconnect-fortnite-cheat' },
+          'delta': { name: 'Ancient Delta Cheat', image: '/storage/images/delta.png', slug: 'ancient-delta-cheat' },
+          'ancient-delta-cheat': { name: 'Ancient Delta Cheat', image: '/storage/images/delta.png', slug: 'ancient-delta-cheat' },
+          'spoofer': { name: 'Verse HWID Spoofer', image: '/storage/images/woofer.png', slug: 'hwid-spoofer' },
+          'hwid-spoofer': { name: 'Verse HWID Spoofer', image: '/storage/images/woofer.png', slug: 'hwid-spoofer' },
+          'woofer': { name: 'Verse HWID Spoofer', image: '/storage/images/woofer.png', slug: 'hwid-spoofer' }
+        };
+        const pStr = (this.product.path || this.product.name || window.location.pathname || '').toLowerCase();
+        for (const k in map) {
+          if (pStr.includes(k)) return map[k];
+        }
+        return { name: this.product.name, image: '/storage/images/rust.jpg', slug: 'krush-rust-cheat' };
+      },
           'external-rust': { name: 'Krush Rust Cheat', image: '/storage/images/rust.jpg' },
           'r6': { name: 'Crusader R6 Cheat', image: '/storage/images/r6.jpg' },
           'apex': { name: 'Ancient Apex Cheat', image: '/storage/images/apex.png' },
@@ -1144,11 +1189,12 @@
         });
       },
 
-                                                                  buyNow: async function () {
+                                                                              buyNow: async function () {
         if (this.buyingNow) return;
         this.buyingNow = true;
         this.buyNowError = '';
-        window.location.href = 'https://riftcheats.mykomerza.com';
+        const slug = this.localAsset ? this.localAsset.slug : 'krush-rust-cheat';
+        window.location.href = `https://riftcheats.mykomerza.com/product?id=${slug}`;
       }
     }));
   });
