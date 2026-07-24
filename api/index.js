@@ -366,6 +366,65 @@ function fetchProductsFromKomerza(callback) {
 }
 
 module.exports = (req, res) => {
+  // Automated Checkout Proxy Handler
+  if (req.url === '/api/checkout' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', async () => {
+      try {
+        const parsed = JSON.parse(body || '{}');
+        const items = parsed.items || [];
+        const payload = JSON.stringify({
+          storeId: 'cfac2054-69bd-4f6a-a535-72fe58789383',
+          emailAddress: 'customer@riftcheats.com',
+          items: items
+        });
+
+        const postReq = https.request('https://m-api.komerza.com/orders', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
+        }, (postRes) => {
+          let resData = '';
+          postRes.on('data', chunk => { resData += chunk; });
+          postRes.on('end', () => {
+            try {
+              const resJson = JSON.parse(resData);
+              if (resJson.data?.id || resJson.id) {
+                const orderId = resJson.data?.id || resJson.id;
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ url: `https://checkout.komerza.com/checkout/${orderId}` }));
+              } else if (resJson.url) {
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ url: resJson.url }));
+              } else {
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ url: 'https://riftcheats.mykomerza.com' }));
+              }
+            } catch (e) {
+              res.writeHead(200, { 'Content-Type': 'application/json' });
+              res.end(JSON.stringify({ url: 'https://riftcheats.mykomerza.com' }));
+            }
+          });
+        });
+
+        postReq.on('error', () => {
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ url: 'https://riftcheats.mykomerza.com' }));
+        });
+
+        postReq.write(payload);
+        postReq.end();
+      } catch (e) {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ url: 'https://riftcheats.mykomerza.com' }));
+      }
+    });
+    return;
+  }
+
   let slug = req.query.slug;
   if (!slug) {
     const urlParts = req.url.split('?')[0].split('/');

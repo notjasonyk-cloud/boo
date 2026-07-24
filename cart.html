@@ -243,11 +243,30 @@
           altchaPayload: null,
           checkingOut: false,
           checkoutError: '',
-                    init() {
-            localStorage.removeItem('cart');
-            localStorage.removeItem('kmrza_basket');
-            localStorage.removeItem('kmrza_basket_backup');
-            this.items = [];
+                              init() {
+            const raw = localStorage.getItem('cart');
+            if (raw) {
+              try {
+                const parsed = JSON.parse(raw);
+                this.items = parsed.map(item => {
+                  const cat = CATALOG_MAP[item.productId] || CATALOG_MAP[740833];
+                  const variant = cat.variants[item.variantId] || Object.values(cat.variants)[0];
+                  return {
+                    productId: item.productId,
+                    variantId: item.variantId,
+                    quantity: item.quantity,
+                    name: cat.name,
+                    variantName: variant.name,
+                    unitPrice: variant.price,
+                    image: cat.image
+                  };
+                });
+              } catch (e) {
+                this.items = [];
+              }
+            } else {
+              this.items = [];
+            }
           },
           formatCurrency(amt) {
             return '$' + Number(amt).toFixed(2);
@@ -267,9 +286,28 @@
             this.items.splice(index, 1);
             this.saveToStorage();
           },
-                              async proceedToCheckout() {
-            if (this.checkingOut) return;
+                                        async proceedToCheckout() {
+            if (this.items.length === 0 || this.checkingOut) return;
             this.checkingOut = true;
+            this.checkoutError = '';
+
+            try {
+              const res = await fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  items: this.items.map(i => ({ productId: String(i.productId), variantId: String(i.variantId), quantity: i.quantity }))
+                })
+              });
+              const data = await res.json();
+              if (data.url) {
+                window.location.href = data.url;
+                return;
+              }
+            } catch (e) {
+              console.error(e);
+            }
+
             window.location.href = 'https://riftcheats.mykomerza.com';
           }
         });
