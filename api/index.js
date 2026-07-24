@@ -15,7 +15,7 @@ const FALLBACK_PRODUCTS = [
       "arc-raiders-elite"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944493.webp"
+      "/storage/images/arc.png"
     ],
     "variants": [
       {
@@ -50,7 +50,7 @@ const FALLBACK_PRODUCTS = [
       "apex-pro"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944495.webp"
+      "/storage/images/apex.png"
     ],
     "variants": [
       {
@@ -85,7 +85,7 @@ const FALLBACK_PRODUCTS = [
       "r6-private"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944492.webp"
+      "/storage/images/r6.jpg"
     ],
     "variants": [
       {
@@ -119,7 +119,7 @@ const FALLBACK_PRODUCTS = [
       "fortnite"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944503.webp"
+      "/storage/images/fortnite.png"
     ],
     "variants": [
       {
@@ -160,7 +160,7 @@ const FALLBACK_PRODUCTS = [
       "delta"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944525.webp"
+      "/storage/images/delta.png"
     ],
     "variants": [
       {
@@ -194,7 +194,7 @@ const FALLBACK_PRODUCTS = [
       "rust-private"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944529.webp"
+      "/storage/images/rust.jpg"
     ],
     "variants": [
       {
@@ -229,7 +229,7 @@ const FALLBACK_PRODUCTS = [
       "woofer"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944536.webp"
+      "/storage/images/woofer.png"
     ],
     "variants": [
       {
@@ -274,34 +274,26 @@ const SLUG_TO_PATH = {
 };
 
 const PRODUCT_ASSETS = {
-  'rust': {
-    image: 'https://api.komerza.com/storage/images/944529.webp',
-    desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">External Streamproof Solution</span></p>'
-  },
-  'arc': {
-    image: 'https://api.komerza.com/storage/images/944493.webp',
-    desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Extreme Performance</span></p>'
-  },
-  'r6': {
-    image: 'https://api.komerza.com/storage/images/944492.webp',
-    desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Undetected Solution</span></p>'
-  },
-  'apex': {
-    image: 'https://api.komerza.com/storage/images/944495.webp',
-    desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Clean Streamproof Glow</span></p>'
-  },
-  'fortnite': {
-    image: 'https://api.komerza.com/storage/images/944503.webp',
-    desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Optimized For Tournament Play</span></p>'
-  },
-  'delta': {
-    image: 'https://api.komerza.com/storage/images/944525.webp',
-    desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Premium Delta Force Solution</span></p>'
-  },
-  'woofer': {
-    image: 'https://api.komerza.com/storage/images/944536.webp',
-    desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Supports Windows 10 &amp; 11</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Bypasses EAC, BE, Vanguard, and more</span></p>'
-  }
+  'rust': { name: 'Krush Rust Cheat', image: '/storage/images/rust.jpg', slug: 'krush-rust-cheat' },
+  'krush-rust-cheat': { name: 'Krush Rust Cheat', image: '/storage/images/rust.jpg', slug: 'krush-rust-cheat' },
+  'r6': { name: 'Crusader R6 Cheat', image: '/storage/images/r6.jpg', slug: 'crusader-r6-cheat' },
+  'rainbow-six-siege': { name: 'Crusader R6 Cheat', image: '/storage/images/r6.jpg', slug: 'crusader-r6-cheat' },
+  'crusader-r6-cheat': { name: 'Crusader R6 Cheat', image: '/storage/images/r6.jpg', slug: 'crusader-r6-cheat' },
+  'apex': { name: 'Ancient Apex Cheat', image: '/storage/images/apex.png', slug: 'ancient-apex-cheat' },
+  'apex-legends': { name: 'Ancient Apex Cheat', image: '/storage/images/apex.png', slug: 'ancient-apex-cheat' },
+  'ancient-apex-cheat': { name: 'Ancient Apex Cheat', image: '/storage/images/apex.png', slug: 'ancient-apex-cheat' },
+  'arc': { name: 'Krush Arc Cheat', image: '/storage/images/arc.png', slug: 'krush-arc-cheat' },
+  'arc-raiders': { name: 'Krush Arc Cheat', image: '/storage/images/arc.png', slug: 'krush-arc-cheat' },
+  'krush-arc-cheat': { name: 'Krush Arc Cheat', image: '/storage/images/arc.png', slug: 'krush-arc-cheat' },
+  'fortnite': { name: 'Disconnect Fortnite Cheat', image: '/storage/images/fortnite.png', slug: 'disconnect-fortnite-cheat' },
+  'fortnite-private': { name: 'Disconnect Fortnite Cheat', image: '/storage/images/fortnite.png', slug: 'disconnect-fortnite-cheat' },
+  'disconnect-fortnite-cheat': { name: 'Disconnect Fortnite Cheat', image: '/storage/images/fortnite.png', slug: 'disconnect-fortnite-cheat' },
+  'delta': { name: 'Ancient Delta Cheat', image: '/storage/images/delta.png', slug: 'ancient-delta-cheat' },
+  'delta-force': { name: 'Ancient Delta Cheat', image: '/storage/images/delta.png', slug: 'ancient-delta-cheat' },
+  'ancient-delta-cheat': { name: 'Ancient Delta Cheat', image: '/storage/images/delta.png', slug: 'ancient-delta-cheat' },
+  'spoofer': { name: 'Verse HWID Spoofer', image: '/storage/images/woofer.png', slug: 'hwid-spoofer' },
+  'hwid-spoofer': { name: 'Verse HWID Spoofer', image: '/storage/images/woofer.png', slug: 'hwid-spoofer' },
+  'woofer': { name: 'Verse HWID Spoofer', image: '/storage/images/woofer.png', slug: 'hwid-spoofer' }
 };
 
 let cachedProducts = null;
@@ -498,7 +490,7 @@ module.exports = (req, res) => {
         prodImages = [PRODUCT_ASSETS[slug].image];
       }
       if (!prodImages.length) {
-        prodImages = ['https://api.komerza.com/storage/images/944529.webp'];
+        prodImages = ['/storage/images/rust.jpg'];
       }
       const localAsset = {
         image: prodImages[0],

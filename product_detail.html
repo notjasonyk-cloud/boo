@@ -357,27 +357,11 @@
         <div x-data="productForm" class="flex flex-col lg:flex-row gap-6 lg:gap-8">
 
           
-                              <div class="w-full lg:w-[40%] flex-shrink-0">
+                                        <div class="w-full lg:w-[40%] flex-shrink-0">
             <div class="aspect-group-card-image rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/20">
-              <img :src="localAsset.image" src="/storage/images/rust.jpg" class="w-full h-full object-cover rounded-2xl" alt="Product Image" />
+              <img :src="getProductImage()" src="/storage/images/rust.jpg" class="w-full h-full object-cover rounded-2xl" alt="Product Image" />
             </div>
           </div>
-
-          <div class="flex-1 min-w-0 flex flex-col gap-4">
-            <h1 class="text-3xl md:text-5xl text-transparent font-semibold tracking-tighter bg-clip-text bg-gradient-text-title animate-text-gradient" x-text="localAsset.name || product.name">
-              Krush Rust Cheat
-            </h1>
-
-            <div class="flex items-center gap-2 flex-wrap">
-              <div
-                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border"
-                style="border-color: #2ecc7140; background-color: #2ecc7110;"
-              >
-                <div class="relative">
-                  <div class="size-2 rounded-full" style="background-color: #2ecc71">
-                    <div class="absolute inset-0 size-2 rounded-full animate-ping" style="background-color: #2ecc71"></div>
-                  </div>
-                </div>
                 <span class="text-xs sm:text-sm font-medium" style="color: #2ecc71">
                   Undetected
                 </span>
@@ -1192,11 +1176,31 @@
         });
       },
 
-                                                                                          buyNow: async function () {
+                                                                                                buyNow: async function () {
         if (this.buyingNow) return;
         this.buyingNow = true;
         this.buyNowError = '';
-        const slug = this.localAsset ? this.localAsset.slug : 'krush-rust-cheat';
+        const pMap = {
+          '651369': 'crusader-r6-cheat',
+          '740833': 'krush-rust-cheat',
+          '651363': 'ancient-apex-cheat',
+          '651348': 'krush-arc-cheat',
+          '740821': 'disconnect-fortnite-cheat',
+          '740827': 'ancient-delta-cheat',
+          '740845': 'hwid-spoofer'
+        };
+        const pId = String(this.product ? this.product.id : '');
+        const pPath = (this.product ? (this.product.path || this.product.name) : window.location.pathname).toLowerCase();
+        let slug = pMap[pId];
+        if (!slug) {
+          if (pPath.includes('r6') || pPath.includes('siege') || pPath.includes('crusader')) slug = 'crusader-r6-cheat';
+          else if (pPath.includes('apex')) slug = 'ancient-apex-cheat';
+          else if (pPath.includes('arc')) slug = 'krush-arc-cheat';
+          else if (pPath.includes('fortnite') || pPath.includes('disconnect')) slug = 'disconnect-fortnite-cheat';
+          else if (pPath.includes('delta')) slug = 'ancient-delta-cheat';
+          else if (pPath.includes('spoofer') || pPath.includes('hwid') || pPath.includes('woofer')) slug = 'hwid-spoofer';
+          else slug = 'krush-rust-cheat';
+        }
         window.location.href = `https://riftcheats.mykomerza.com/product?id=${slug}`;
       }
     }));
