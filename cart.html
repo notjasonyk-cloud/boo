@@ -159,24 +159,11 @@
                   <span class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-accent-300 to-accent-500" x-text="formatCurrency(calculateTotal())"></span>
                 </div>
 
-                <!-- Altcha Widget Container -->
-                <div class="mt-1">
-                  <div x-show="!altchaPayload" class="text-xs text-white/50 mb-2">Security Verification:</div>
-                  <altcha-widget
-                    challengeurl="https://api-internal-3.sellauth.com/v1/altcha?shop_id=223549"
-                    auto="onload"
-                    hidefooter="true"
-                    hidelogo="true"
-                    x-ref="altcha"
-                    style="--altcha-max-width: 100%;"
-                  ></altcha-widget>
-                </div>
-
                 <!-- Checkout Button -->
                 <button
                   @click="proceedToCheckout"
                   type="button"
-                  :disabled="checkingOut || !altchaPayload"
+                  :disabled="checkingOut"
                   class="w-full py-4 rounded-xl bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 disabled:opacity-50 font-bold text-white transition-all duration-300 shadow-lg shadow-accent-500/25 flex justify-center items-center gap-2"
                 >
                   <span x-text="checkingOut ? 'Creating Checkout...' : 'Proceed to Checkout »'"></span>
@@ -215,37 +202,37 @@
       const CATALOG_MAP = {
         651369: {
           name: "Crusader R6 Cheat",
-          image: "https://api.sellauth.com/storage/images/944492.webp",
+          image: "/storage/images/r6.jpg",
           variants: { 1026675: { name: "1 Day key", price: 7.49 }, 1026676: { name: "7 Day Key", price: 29.99 }, 1026677: { name: "30 Day Key", price: 59.99 } }
         },
         740833: {
           name: "Krush Rust Cheat",
-          image: "https://api.sellauth.com/storage/images/944529.webp",
+          image: "/storage/images/rust.jpg",
           variants: { 1210815: { name: "1 Day key", price: 7.49 }, 1210816: { name: "7 Day Key", price: 29.99 }, 1210817: { name: "30 Day Key", price: 59.99 } }
         },
         651363: {
-          name: "Krush Apex Cheat",
-          image: "https://api.sellauth.com/storage/images/944495.webp",
+          name: "Ancient Apex Cheat",
+          image: "/storage/images/apex.png",
           variants: { 1026646: { name: "1 Day key", price: 7.49 }, 1026647: { name: "7 Day Key", price: 29.99 }, 1026648: { name: "30 Day Key", price: 59.99 } }
         },
         651348: {
           name: "Krush Arc Cheat",
-          image: "https://api.sellauth.com/storage/images/944493.webp",
+          image: "/storage/images/arc.png",
           variants: { 1026616: { name: "1 Day key", price: 7.49 }, 1026632: { name: "7 Day Key", price: 29.99 }, 1026633: { name: "30 Day Key", price: 59.99 } }
         },
         740821: {
           name: "Disconnect Fortnite Cheat",
-          image: "https://api.sellauth.com/storage/images/944503.webp",
+          image: "/storage/images/fortnite.png",
           variants: { 1210784: { name: "1 Day key", price: 7.49 }, 1210785: { name: "7 Day Key", price: 29.99 }, 1210786: { name: "30 Day Key", price: 59.99 }, 1360871: { name: "Lifetime", price: 299.99 } }
         },
         740827: {
           name: "Ancient Delta Cheat",
-          image: "https://api.sellauth.com/storage/images/944525.webp",
+          image: "/storage/images/delta.png",
           variants: { 1210803: { name: "1 Day key", price: 7.49 }, 1210804: { name: "7 Day Key", price: 29.99 }, 1210805: { name: "30 Day Key", price: 59.99 } }
         },
         740845: {
           name: "Verse HWID Spoofer",
-          image: "https://api.sellauth.com/storage/images/944536.webp",
+          image: "/storage/images/woofer.png",
           variants: { 1210839: { name: "1 Time", price: 29.99 }, 1210842: { name: "Lifetime", price: 99.99 } }
         }
       };
@@ -272,7 +259,7 @@
                 variantId: item.variantId,
                 quantity: item.quantity || 1,
                 name: prod.name || (`Product #${item.productId}`),
-                image: prod.image || 'https://api.sellauth.com/storage/images/944529.webp',
+                image: prod.image || '/storage/images/rust.jpg',
                 variantName: variant.name || 'Key Variant',
                 unitPrice: variant.price || 7.49
               };

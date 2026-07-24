@@ -40,7 +40,7 @@ const FALLBACK_PRODUCTS = [
   },
   {
     "id": 651363,
-    "name": "Krush Apex Cheat",
+    "name": "Ancient Apex Cheat",
     "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Apex Pro is the ultimate undetected cheat suite for dominating Apex Legends arenas and ranked lobbies. Featuring lightning-fast aimbot, crystal-clear ESP &amp; wallhack, customizable radar, item/loot scanner, no-recoil + perfect movement macros, all while staying fully undetected against the latest EAC and Ricochet anti-cheat updates. Climb ranks faster, secure endgame wins, and outplay every squad with pro-level advantage.</span></p>",
     "currency": "USD",
     "path": "apex-legends",
@@ -392,9 +392,9 @@ module.exports = (req, res) => {
       'r6': 'Crusader R6 Cheat',
       'rainbow-six-siege': 'Crusader R6 Cheat',
       'r6-private': 'Crusader R6 Cheat',
-      'apex': 'Krush Apex Cheat',
-      'apex-legends': 'Krush Apex Cheat',
-      'apex-pro': 'Krush Apex Cheat',
+      'apex': 'Ancient Apex Cheat',
+      'apex-legends': 'Ancient Apex Cheat',
+      'apex-pro': 'Ancient Apex Cheat',
       'arc': 'Krush Arc Cheat',
       'arc-raiders': 'Krush Arc Cheat',
       'arc-raiders-elite': 'Krush Arc Cheat',
@@ -523,7 +523,7 @@ module.exports = (req, res) => {
       output = output.replace(/\/storage\/images\/rust\.jpg/g, localAsset.image);
       output = output.replace(/Crusader R6 Cheat/g, liveProd.name);
       output = output.replace(/Krush Rust Cheat/g, liveProd.name);
-      output = output.replace(/Krush Apex Cheat/g, liveProd.name);
+      output = output.replace(/Ancient Apex Cheat/g, liveProd.name);
 
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/html');
