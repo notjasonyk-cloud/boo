@@ -359,61 +359,9 @@
           
           <div class="w-full lg:w-[40%] flex-shrink-0">
             
-              <div class="splide main">
-                <div class="splide__track aspect-product-page-image">
-                  <ul class="splide__list">
-                    
-                      <li class="splide__slide bg-black/5 border border-white/5 rounded-2xl overflow-hidden aspect-product-page-image">
-                        <img :src="localAsset ? localAsset.image : '/storage/images/rust.jpg'" src="/storage/images/rust.jpg" class="size-full object-cover rounded-2xl" />
-                      </li>
-                    
-                  </ul>
-                </div>
-              </div>
-
-              
-            
-
-            
-            <div class="mt-4 grid grid-cols-2 gap-3">
-              <div class="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-white/5">
-                <div class="size-10 rounded-lg bg-accent-500/10 border border-accent-500/10 flex items-center justify-center text-accent-500 shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24"><path fill="currentColor" d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66c.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <p class="text-sm font-semibold text-t-primary leading-tight">Instant Delivery</p>
-                  <p class="text-xs text-t-primary/50 leading-tight mt-0.5">Automated</p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-white/5">
-                <div class="size-10 rounded-lg bg-accent-500/10 border border-accent-500/10 flex items-center justify-center text-accent-500 shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12c5.16-1.26 9-6.45 9-12V5zm-2 16l-4-4l1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <p class="text-sm font-semibold text-t-primary leading-tight">Undetected</p>
-                  <p class="text-xs text-t-primary/50 leading-tight mt-0.5">Constantly updated</p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-white/5">
-                <div class="size-10 rounded-lg bg-accent-500/10 border border-accent-500/10 flex items-center justify-center text-accent-500 shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2M7 9h10v2H7zm6 5H7v-2h6zm4-6H7V6h10z"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <p class="text-sm font-semibold text-t-primary leading-tight">24/7 Support</p>
-                  <p class="text-xs text-t-primary/50 leading-tight mt-0.5">Real humans</p>
-                </div>
-              </div>
-
-              <div class="flex items-center gap-3 p-3 rounded-xl border border-white/5 bg-white/5">
-                <div class="size-10 rounded-lg bg-accent-500/10 border border-accent-500/10 flex items-center justify-center text-accent-500 shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24"><path fill="currentColor" d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2m-6 9c-1.1 0-2-.9-2-2s.9-2 2-2s2 .9 2 2s-.9 2-2 2m3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1z"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <p class="text-sm font-semibold text-t-primary leading-tight">Secure Payment</p>
-                  <p class="text-xs text-t-primary/50 leading-tight mt-0.5">SSL encrypted</p>
-                </div>
+              <div class="w-full lg:w-[40%] flex-shrink-0">
+              <div class="aspect-group-card-image rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/20">
+                <img :src="localAsset ? localAsset.image : '/storage/images/rust.jpg'" src="/storage/images/rust.jpg" class="w-full h-full object-cover rounded-2xl" alt="Product Image" />
               </div>
             </div>
           </div>
@@ -1196,11 +1144,11 @@
         });
       },
 
-                                                            buyNow: async function () {
+                                                                  buyNow: async function () {
         if (this.buyingNow) return;
         this.buyingNow = true;
         this.buyNowError = '';
-        window.location.href = 'https://checkout.komerza.com/checkout/cfac2054-69bd-4f6a-a535-72fe58789383';
+        window.location.href = 'https://riftcheats.mykomerza.com';
       }
     }));
   });

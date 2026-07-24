@@ -293,6 +293,12 @@
             this.items.splice(index, 1);
             this.saveToStorage();
           },
+                    async proceedToCheckout() {
+            if (this.items.length === 0 || this.checkingOut) return;
+            this.checkingOut = true;
+            this.checkoutError = '';
+            window.location.href = 'https://riftcheats.mykomerza.com';
+          },
           clearCart() {
             this.items = [];
             this.saveToStorage();
