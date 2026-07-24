@@ -1170,7 +1170,7 @@
         });
       },
 
-                                    buyNow: async function () {
+                                          buyNow: async function () {
         if (this.buyingNow) {
           return;
         }
@@ -1180,19 +1180,18 @@
           return;
         }
 
-        const buyNowCart = [{
-          productId: this.product.id,
-          variantId: this.variant.id,
+        const buyNowItems = [{
+          productId: String(this.product.id),
+          variantId: String(this.variant.id),
           quantity: this.quantity,
         }];
 
         if (this.appCart.items.length > 0) {
           for (const item of this.appCart.items) {
             if (item.parentVariantId === this.variant.id) {
-              buyNowCart.push({
-                productId: item.productId,
-                variantId: item.variantId,
-                parentVariantId: item.parentVariantId,
+              buyNowItems.push({
+                productId: String(item.productId),
+                variantId: String(item.variantId),
                 quantity: item.quantity,
               });
             }
@@ -1200,23 +1199,15 @@
         }
 
         const formData = {
-          cart: buyNowCart,
-          currency: this.appCurrency.currency,
-          shopId: '223549',
+          storeId: 'cfac2054-69bd-4f6a-a535-72fe58789383',
+          emailAddress: window.shopCustomer?.email || 'customer@riftcheats.com',
+          items: buyNowItems
         };
-
-        if (window.shopCustomer?.email) {
-          formData.email = window.shopCustomer.email;
-        }
-
-        if (this.altchaPayload) {
-          formData.altcha = this.altchaPayload;
-        }
 
         try {
           this.buyingNow = true;
 
-          const response = await fetch('https://api-internal-3.sellauth.com/v1/checkout', {
+          const response = await fetch('https://m-api.komerza.com/orders', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
@@ -1227,20 +1218,14 @@
 
           const responseData = await response.json();
 
-          if (responseData.url) {
-            let sessionUrl = responseData.url;
-            let sessionId = sessionUrl;
-            if (sessionUrl.includes('/checkout/')) {
-              sessionId = sessionUrl.substring(sessionUrl.indexOf('/checkout/') + 10);
-            }
-            window.location.href = `https://sellauth.com/checkout/${sessionId}`;
+          if (responseData.data?.id || responseData.id) {
+            const orderId = responseData.data?.id || responseData.id;
+            window.location.href = `https://checkout.komerza.com/checkout/${orderId}`;
+          } else if (responseData.url) {
+            window.location.href = responseData.url;
           } else {
             this.buyingNow = false;
-            this.buyNowError = responseData?.message || 'Error in the AJAX request.';
-
-            if (responseData?.error == 'captcha_verification_failed') {
-              setTimeout(() => window.location.reload(), 1000);
-            }
+            this.buyNowError = responseData?.message || 'Error processing checkout with Komerza.';
           }
         } catch (error) {
           console.error(error);

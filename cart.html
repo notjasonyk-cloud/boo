@@ -314,44 +314,38 @@
             const raw = this.items.map(i => ({ productId: i.productId, variantId: i.variantId, quantity: i.quantity }));
             localStorage.setItem('cart', JSON.stringify(raw));
           },
-          async proceedToCheckout() {
+                    async proceedToCheckout() {
             if (this.items.length === 0 || this.checkingOut) return;
             this.checkingOut = true;
             this.checkoutError = '';
 
-            const buyNowCart = this.items.map(item => ({
-              productId: item.productId,
-              variantId: item.variantId,
+            const buyNowItems = this.items.map(item => ({
+              productId: String(item.productId),
+              variantId: String(item.variantId),
               quantity: item.quantity
             }));
 
             const formData = {
-              cart: buyNowCart,
-              currency: 'USD',
-              shopId: '223549'
+              storeId: 'cfac2054-69bd-4f6a-a535-72fe58789383',
+              emailAddress: 'customer@riftcheats.com',
+              items: buyNowItems
             };
 
-            if (this.altchaPayload) {
-              formData.altcha = this.altchaPayload;
-            }
-
             try {
-              const response = await fetch('https://api-internal-3.sellauth.com/v1/checkout', {
+              const response = await fetch('https://m-api.komerza.com/orders', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
               });
 
               const data = await response.json();
-              if (data.url) {
-                let sessionUrl = data.url;
-                let sessionId = sessionUrl;
-                if (sessionUrl.includes('/checkout/')) {
-                  sessionId = sessionUrl.substring(sessionUrl.indexOf('/checkout/') + 10);
-                }
-                window.location.href = `https://sellauth.com/checkout/${sessionId}`;
+              if (data.data?.id || data.id) {
+                const orderId = data.data?.id || data.id;
+                window.location.href = `https://checkout.komerza.com/checkout/${orderId}`;
+              } else if (data.url) {
+                window.location.href = data.url;
               } else {
-                this.checkoutError = data.message || 'Checkout failed. Please try again.';
+                this.checkoutError = data.message || 'Komerza checkout failed. Please try again.';
               }
             } catch (e) {
               this.checkoutError = 'Network error. Please try again.';
@@ -359,7 +353,7 @@
               this.checkingOut = false;
             }
           }
-        }));
+      });
       });
     </script>
 
