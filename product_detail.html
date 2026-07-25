@@ -1170,15 +1170,10 @@
         });
       },
 
-                                    buyNow: async function () {
-        if (this.buyingNow) {
-          return;
-        }
-
-        if (this.quantity < this.minQuantity || this.quantity > this.maxQuantity) {
-          this.buyNowError = `Please enter a valid quantity (from ${this.minQuantity} to ${this.maxQuantity}).`;
-          return;
-        }
+                                          buyNow: async function () {
+        if (this.buyingNow) return;
+        this.buyingNow = true;
+        this.buyNowError = null;
 
         const buyNowCart = [{
           productId: this.product.id,
@@ -1186,7 +1181,7 @@
           quantity: this.quantity,
         }];
 
-        if (this.appCart.items.length > 0) {
+        if (this.appCart && this.appCart.items && this.appCart.items.length > 0) {
           for (const item of this.appCart.items) {
             if (item.parentVariantId === this.variant.id) {
               buyNowCart.push({
@@ -1201,7 +1196,7 @@
 
         const formData = {
           cart: buyNowCart,
-          currency: this.appCurrency.currency,
+          currency: (this.appCurrency && this.appCurrency.currency) ? this.appCurrency.currency : 'USD',
           shopId: '223549',
         };
 
@@ -1214,8 +1209,6 @@
         }
 
         try {
-          this.buyingNow = true;
-
           const response = await fetch('https://api-internal-3.sellauth.com/v1/checkout', {
             method: 'POST',
             headers: {
@@ -1236,16 +1229,13 @@
             window.location.href = `https://sellauth.com/checkout/${sessionId}`;
           } else {
             this.buyingNow = false;
-            this.buyNowError = responseData?.message || 'Error in the AJAX request.';
-
-            if (responseData?.error == 'captcha_verification_failed') {
-              setTimeout(() => window.location.reload(), 1000);
-            }
+            this.buyNowError = responseData?.message || 'Error in checkout request.';
           }
         } catch (error) {
           console.error(error);
           this.buyingNow = false;
-          this.buyNowError = 'Unexpected error. Please refresh the page and try again.';
+          // Fallback direct checkout link
+          window.location.href = `https://sellauth.com/shop/223549`;
         }
       }
     }));

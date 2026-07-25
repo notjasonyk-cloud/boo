@@ -160,7 +160,7 @@
                 <button
                   @click="proceedToCheckout"
                   type="button"
-                  :disabled="checkingOut || !altchaPayload"
+                  :disabled="checkingOut"
                   class="w-full py-4 rounded-xl bg-accent-500 hover:bg-accent-600 disabled:opacity-50 font-semibold text-white transition-all duration-300 shadow-lg shadow-accent-500/20 flex justify-center items-center gap-2 mt-2"
                 >
                   <span x-text="checkingOut ? 'Creating Checkout...' : 'Proceed to Checkout »'"></span>
@@ -196,7 +196,7 @@
 
     <!-- Product Database Map -->
     <script>
-      const CATALOG_MAP = {
+            const CATALOG_MAP = {
         651369: {
           name: "Crusader R6 Cheat",
           image: "https://api.sellauth.com/storage/images/944492.webp",
@@ -208,7 +208,7 @@
           variants: { 1210815: { name: "1 Day key", price: 7.49 }, 1210816: { name: "7 Day Key", price: 29.99 }, 1210817: { name: "30 Day Key", price: 59.99 } }
         },
         651363: {
-          name: "Krush Apex Cheat",
+          name: "Ancient Apex Cheat",
           image: "https://api.sellauth.com/storage/images/944495.webp",
           variants: { 1026646: { name: "1 Day key", price: 7.49 }, 1026647: { name: "7 Day Key", price: 29.99 }, 1026648: { name: "30 Day Key", price: 59.99 } }
         },
@@ -228,7 +228,7 @@
           variants: { 1210803: { name: "1 Day key", price: 7.49 }, 1210804: { name: "7 Day Key", price: 29.99 }, 1210805: { name: "30 Day Key", price: 59.99 } }
         },
         740845: {
-          name: "Verse HWID Spoofer",
+          name: "HWID Spoofer",
           image: "https://api.sellauth.com/storage/images/944536.webp",
           variants: { 1210839: { name: "1 Time", price: 29.99 }, 1210842: { name: "Lifetime", price: 99.99 } }
         }
@@ -298,7 +298,7 @@
             const raw = this.items.map(i => ({ productId: i.productId, variantId: i.variantId, quantity: i.quantity }));
             localStorage.setItem('cart', JSON.stringify(raw));
           },
-          async proceedToCheckout() {
+                    async proceedToCheckout() {
             if (this.items.length === 0 || this.checkingOut) return;
             this.checkingOut = true;
             this.checkoutError = '';
@@ -338,12 +338,13 @@
                 this.checkoutError = data.message || 'Checkout failed. Please try again.';
               }
             } catch (e) {
-              this.checkoutError = 'Network error. Please try again.';
+              console.error(e);
+              window.location.href = 'https://sellauth.com/shop/223549';
             } finally {
               this.checkingOut = false;
             }
           }
-        }));
+      }));
       });
     </script>
 

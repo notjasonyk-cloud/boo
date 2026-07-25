@@ -6,7 +6,7 @@ const FALLBACK_PRODUCTS = [
   {
     "id": 651348,
     "name": "Krush Arc Cheat",
-    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Arc Raiders Elite is the ultimate undetected cheat suite for dominating ARC Raiders extractions. Featuring lightning-fast aimbot, crystal-clear ESP &amp; wallhack, customizable radar, loot scanner, and no-recoil precision, all while staying fully undetected against aggressive anti-cheat waves. Elevate your raids, secure top-tier loot, and outplay every opponent with elite-level advantage. </span></p>",
+    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Krush Arc Cheat is the ultimate undetected cheat suite for dominating ARC Raiders extractions. Featuring lightning-fast aimbot, crystal-clear ESP &amp; wallhack, customizable radar, loot scanner, and no-recoil precision, all while staying fully undetected against aggressive anti-cheat waves. Elevate your raids, secure top-tier loot, and outplay every opponent with elite-level advantage. </span></p>",
     "currency": "USD",
     "path": "arc-raiders",
     "aliases": [
@@ -41,7 +41,7 @@ const FALLBACK_PRODUCTS = [
   {
     "id": 651363,
     "name": "Krush Apex Cheat",
-    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Apex Pro is the ultimate undetected cheat suite for dominating Apex Legends arenas and ranked lobbies. Featuring lightning-fast aimbot, crystal-clear ESP &amp; wallhack, customizable radar, item/loot scanner, no-recoil + perfect movement macros, all while staying fully undetected against the latest EAC and Ricochet anti-cheat updates. Climb ranks faster, secure endgame wins, and outplay every squad with pro-level advantage.</span></p>",
+    "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Ancient Apex Cheat is the ultimate undetected cheat suite for dominating Apex Legends arenas and ranked lobbies. Featuring lightning-fast aimbot, crystal-clear ESP &amp; wallhack, customizable radar, item/loot scanner, no-recoil + perfect movement macros, all while staying fully undetected against the latest EAC and Ricochet anti-cheat updates. Climb ranks faster, secure endgame wins, and outplay every squad with pro-level advantage.</span></p>",
     "currency": "USD",
     "path": "apex-legends",
     "aliases": [
@@ -296,7 +296,7 @@ const PRODUCT_ASSETS = {
   },
   'delta': {
     image: 'https://api.sellauth.com/storage/images/944525.webp',
-    desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Premium Delta Force Solution</span></p>'
+    desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Premium Ancient Delta Cheat Solution</span></p>'
   },
   'woofer': {
     image: 'https://api.sellauth.com/storage/images/944536.webp',
