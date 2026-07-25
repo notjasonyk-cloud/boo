@@ -15,7 +15,7 @@ const FALLBACK_PRODUCTS = [
       "arc-raiders-elite"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944493.webp"
+      "https://api.sellauth.com/storage/images/944493.webp"
     ],
     "variants": [
       {
@@ -40,7 +40,7 @@ const FALLBACK_PRODUCTS = [
   },
   {
     "id": 651363,
-    "name": "Ancient Apex Cheat",
+    "name": "Krush Apex Cheat",
     "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Apex Pro is the ultimate undetected cheat suite for dominating Apex Legends arenas and ranked lobbies. Featuring lightning-fast aimbot, crystal-clear ESP &amp; wallhack, customizable radar, item/loot scanner, no-recoil + perfect movement macros, all while staying fully undetected against the latest EAC and Ricochet anti-cheat updates. Climb ranks faster, secure endgame wins, and outplay every squad with pro-level advantage.</span></p>",
     "currency": "USD",
     "path": "apex-legends",
@@ -50,7 +50,7 @@ const FALLBACK_PRODUCTS = [
       "apex-pro"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944495.webp"
+      "https://api.sellauth.com/storage/images/944495.webp"
     ],
     "variants": [
       {
@@ -85,7 +85,7 @@ const FALLBACK_PRODUCTS = [
       "r6-private"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944492.webp"
+      "https://api.sellauth.com/storage/images/944492.webp"
     ],
     "variants": [
       {
@@ -119,7 +119,7 @@ const FALLBACK_PRODUCTS = [
       "fortnite"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944503.webp"
+      "https://api.sellauth.com/storage/images/944503.webp"
     ],
     "variants": [
       {
@@ -160,7 +160,7 @@ const FALLBACK_PRODUCTS = [
       "delta"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944525.webp"
+      "https://api.sellauth.com/storage/images/944525.webp"
     ],
     "variants": [
       {
@@ -194,7 +194,7 @@ const FALLBACK_PRODUCTS = [
       "rust-private"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944529.webp"
+      "https://api.sellauth.com/storage/images/944529.webp"
     ],
     "variants": [
       {
@@ -229,7 +229,7 @@ const FALLBACK_PRODUCTS = [
       "woofer"
     ],
     "images": [
-      "https://api.komerza.com/storage/images/944536.webp"
+      "https://api.sellauth.com/storage/images/944536.webp"
     ],
     "variants": [
       {
@@ -248,8 +248,8 @@ const FALLBACK_PRODUCTS = [
   }
 ];
 
-const API_KEY = process.env.KOMERZA_API_KEY || "eyJhbGciOiJFUzI1NiIsImtpZCI6Ijc3ZDFiNDBkLWE2NzYtNGI1MS1hNTg3LWZiZDE4OGI5YmZkZiIsInR5cCI6IkpXVCJ9.eyJuYmYiOiIxNzg4OTEzNzUwIiwiaXNzIjoiS29tZXJ6YSIsImlhdCI6IjE3ODQ5MTM3NTAiLCJhdWQiOiJtZXJjaGFudCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJjZmFjMjA1NC02OWJkLTRmNmEtYTUzNS03MmZlNTg3ODkzODMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImUwNTBmYmI0LWJkZTYtNGRjZS04MDJmLTgyOTUxMTRlY2Q0NyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6Im5vdHJpZnRjaGVhdHNAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiZnJlZSIsImFwaV9rZXlfaWQiOiIwODQ2NjRhYy00ZmZkLTQxYWItYmE2Ni1iYmU0ZTYzZGRmY2QiLCJleHAiOiIyNTM0MDIzMDA3OTkiLCJrZXlfZmxhZ3MiOiJhcGkiLCJzY29wZSI6WyJzdG9yZXMudXBkYXRlIiwic3RvcmVzLmFmZmlsaWF0ZXMudXBkYXRlIiwic3RvcmVzLnByb2R1Y3RzLnVwZGF0ZSIsInN0b3Jlcy50aWNrZXRzLnVwZGF0ZSIsInN0b3Jlcy5jb3Vwb25zLnVwZGF0ZSIsInN0b3Jlcy5jdXN0b21lcnMudXBkYXRlIiwic3RvcmVzLmNhdGVnb3JpZXMudXBkYXRlIiwic3RvcmVzLmNyZWF0ZSIsInN0b3Jlcy5wcm9kdWN0cy5jcmVhdGUiLCJzdG9yZXMuY291cG9ucy5jcmVhdGUiLCJzdG9yZXMuY3VzdG9tZXJzLmNyZWF0ZSIsInN0b3Jlcy5jYXRlZ29yaWVzLmNyZWF0ZSIsInN0b3Jlcy52aWV3Iiwic3RvcmVzLmFuYWx5dGljcy52aWV3Iiwic3RvcmVzLmFmZmlsaWF0ZXMudmlldyIsInN0b3Jlcy5wcm9kdWN0cy52aWV3IiwidXNlci52aWV3IiwidXNlci5jcnlwdG8udmlld0VuYWJsZWQiLCJzdG9yZXMub3JkZXJzLnZpZXciLCJzdG9yZXMudGlja2V0cy52aWV3Iiwic3RvcmVzLmNvdXBvbnMudmlldyIsInN0b3Jlcy5jdXN0b21lcnMudmlldyIsInN0b3Jlcy5jYXRlZ29yaWVzLnZpZXciLCJzdG9yZXMuY291cG9ucy5kZWxldGUiLCJzdG9yZXMucHJvZHVjdHMuZGVsZXRlIiwic3RvcmVzLnRpY2tldHMuZGVsZXRlIiwic3RvcmVzLmNhdGVnb3JpZXMuZGVsZXRlIiwic3RvcmVzLm9yZGVycy5kZWxpdmVyIiwidXNlci53ZWJob29rcy5jcmVhdGUiLCJ1c2VyLndlYmhvb2tzLnVwZGF0ZSIsInVzZXIud2ViaG9va3MuZGVsZXRlIiwidXNlci53ZWJob29rcy52aWV3Iiwic3RvcmVzLm9yZGVycy5jcmVhdGUiLCJzdG9yZXMub3JkZXJzLnJlZnVuZCIsInN0b3Jlcy5kaXNjb3VudGRpYWxvZ3MudmlldyIsInN0b3Jlcy5kaXNjb3VudGRpYWxvZ3MuY3JlYXRlIiwic3RvcmVzLmRpc2NvdW50ZGlhbG9ncy51cGRhdGUiLCJzdG9yZXMuZGlzY291bnRkaWFsb2dzLmRlbGV0ZSIsInN0b3Jlcy5ibGFja2xpc3QudmlldyIsInN0b3Jlcy5ibGFja2xpc3QuY3JlYXRlIiwic3RvcmVzLmJsYWNrbGlzdC51cGRhdGUiLCJzdG9yZXMuYmxhY2tsaXN0LmRlbGV0ZSIsInN0b3Jlcy5lbWFpbG1hcmtldGluZy52aWV3Iiwic3RvcmVzLmVtYWlsbWFya2V0aW5nLnVwZGF0ZSIsInN0b3Jlcy5ibG9nLnZpZXciLCJzdG9yZXMuYmxvZy5jcmVhdGUiLCJzdG9yZXMuYmxvZy51cGRhdGUiLCJzdG9yZXMuYmxvZy5kZWxldGUiXX0.0QNZsGWagEB00xqgck2hmrISQ_XuDeDZmRI5nHpMqeNMkWsWgXkrbLN2bWn65TfkG8hqIHsiSWaO9yUc5zQVKQ";
-const SHOP_ID = process.env.KOMERZA_SHOP_ID || "cfac2054-69bd-4f6a-a535-72fe58789383";
+const API_KEY = process.env.SELLAUTH_API_KEY || "5959307|3C5nX16iKAnZWTam7Mo3Q6o20GapFtnyLwEHtjfY71a1fd57";
+const SHOP_ID = process.env.SELLAUTH_SHOP_ID || "223549";
 
 const SLUG_TO_PATH = {
   'rust': 'rust',
@@ -275,31 +275,31 @@ const SLUG_TO_PATH = {
 
 const PRODUCT_ASSETS = {
   'rust': {
-    image: 'https://api.komerza.com/storage/images/944529.webp',
+    image: 'https://api.sellauth.com/storage/images/944529.webp',
     desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">External Streamproof Solution</span></p>'
   },
   'arc': {
-    image: 'https://api.komerza.com/storage/images/944493.webp',
+    image: 'https://api.sellauth.com/storage/images/944493.webp',
     desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Extreme Performance</span></p>'
   },
   'r6': {
-    image: 'https://api.komerza.com/storage/images/944492.webp',
+    image: 'https://api.sellauth.com/storage/images/944492.webp',
     desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Undetected Solution</span></p>'
   },
   'apex': {
-    image: 'https://api.komerza.com/storage/images/944495.webp',
+    image: 'https://api.sellauth.com/storage/images/944495.webp',
     desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Clean Streamproof Glow</span></p>'
   },
   'fortnite': {
-    image: 'https://api.komerza.com/storage/images/944503.webp',
+    image: 'https://api.sellauth.com/storage/images/944503.webp',
     desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Optimized For Tournament Play</span></p>'
   },
   'delta': {
-    image: 'https://api.komerza.com/storage/images/944525.webp',
+    image: 'https://api.sellauth.com/storage/images/944525.webp',
     desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Windows 10 &amp; 11 Supported</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Intel &amp; AMD Processors</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Premium Delta Force Solution</span></p>'
   },
   'woofer': {
-    image: 'https://api.komerza.com/storage/images/944536.webp',
+    image: 'https://api.sellauth.com/storage/images/944536.webp',
     desc: '<p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Information:</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Supports Windows 10 &amp; 11</span></p><p class="e-paragraph" dir="ltr" style="text-align: start;"><span style="font-weight: 700; white-space: pre-wrap;">Bypasses EAC, BE, Vanguard, and more</span></p>'
   }
 };
@@ -308,11 +308,11 @@ let cachedProducts = null;
 let lastFetchTime = 0;
 
 function getProducts(callback) {
-  fetchProductsFromKomerza((err, products) => {
+  fetchProductsFromSellAuth((err, products) => {
     if (!err && products && Array.isArray(products) && products.length > 0) {
       return callback(null, products);
     }
-    console.warn("Komerza live API failed or rate-limited, returning bundled FALLBACK_PRODUCTS");
+    console.warn("SellAuth live API failed or rate-limited, returning bundled FALLBACK_PRODUCTS");
     if (typeof FALLBACK_PRODUCTS !== 'undefined' && Array.isArray(FALLBACK_PRODUCTS) && FALLBACK_PRODUCTS.length > 0) {
       return callback(null, FALLBACK_PRODUCTS);
     }
@@ -320,14 +320,14 @@ function getProducts(callback) {
   });
 }
 
-function fetchProductsFromKomerza(callback) {
+function fetchProductsFromSellAuth(callback) {
   const now = Date.now();
   if (cachedProducts && (now - lastFetchTime < 60000)) {
     return callback(null, cachedProducts);
   }
 
   const options = {
-    hostname: 'api.komerza.com',
+    hostname: 'api.sellauth.com',
     path: `/v1/shops/${SHOP_ID}/products`,
     method: 'GET',
     headers: {
@@ -350,7 +350,7 @@ function fetchProductsFromKomerza(callback) {
           lastFetchTime = Date.now();
           callback(null, cachedProducts);
         } else {
-          callback(new Error('Invalid response structure from Komerza API'), null);
+          callback(new Error('Invalid response structure from SellAuth API'), null);
         }
       } catch (err) {
         callback(err, null);
@@ -373,54 +373,32 @@ module.exports = (req, res) => {
   }
   slug = (slug || '').toLowerCase();
 
-  const komerzaPath = SLUG_TO_PATH[slug] || slug;
+  const sellauthPath = SLUG_TO_PATH[slug] || slug;
 
   getProducts((err, products) => {
     if (err || !products) {
-      console.error("Komerza API Error:", err);
+      console.error("SellAuth API Error:", err);
       res.statusCode = 500;
       res.setHeader('Content-Type', 'text/plain');
-      res.end('Komerza API Connection Error. Please refresh and try again.');
+      res.end('SellAuth API Connection Error. Please refresh and try again.');
       return;
     }
 
     const slugClean = slug.replace(/-(private|pro|elite)$/, '');
 
-    const FULL_NAMES = {
-      'rust': 'Krush Rust Cheat',
-      'rust-private': 'Krush Rust Cheat',
-      'r6': 'Crusader R6 Cheat',
-      'rainbow-six-siege': 'Crusader R6 Cheat',
-      'r6-private': 'Crusader R6 Cheat',
-      'apex': 'Ancient Apex Cheat',
-      'apex-legends': 'Ancient Apex Cheat',
-      'apex-pro': 'Ancient Apex Cheat',
-      'arc': 'Krush Arc Cheat',
-      'arc-raiders': 'Krush Arc Cheat',
-      'arc-raiders-elite': 'Krush Arc Cheat',
-      'fortnite': 'Disconnect Fortnite Cheat',
-      'fortnite-private': 'Disconnect Fortnite Cheat',
-      'delta': 'Ancient Delta Cheat',
-      'delta-force': 'Ancient Delta Cheat',
-      'delta-force-private': 'Ancient Delta Cheat',
-      'woofer': 'Verse HWID Spoofer',
-      'spoofer': 'Verse HWID Spoofer',
-      'hwid-spoofer': 'Verse HWID Spoofer'
-    };
-
     const liveProd = products.find(p => {
       if (!p) return false;
       const pPath = (p.path || '').toLowerCase();
       const pPathClean = pPath.replace(/-(private|pro|elite)$/, '');
-      if (pPath === komerzaPath || pPath === slug || pPathClean === slugClean) return true;
-      if (Array.isArray(p.aliases) && (p.aliases.includes(slug) || p.aliases.includes(komerzaPath))) return true;
+      if (pPath === sellauthPath || pPath === slug || pPathClean === slugClean) return true;
+      if (Array.isArray(p.aliases) && (p.aliases.includes(slug) || p.aliases.includes(sellauthPath))) return true;
       return false;
     });
 
     if (!liveProd) {
       res.statusCode = 404;
       res.setHeader('Content-Type', 'text/plain');
-      res.end('Product not found in Komerza dashboard.');
+      res.end('Product not found in SellAuth dashboard.');
       return;
     }
 
@@ -439,7 +417,7 @@ module.exports = (req, res) => {
         prodImages = [PRODUCT_ASSETS[slug].image];
       }
       if (!prodImages.length) {
-        prodImages = ['https://api.komerza.com/storage/images/944529.webp'];
+        prodImages = ['https://api.sellauth.com/storage/images/944529.webp'];
       }
       const localAsset = {
         image: prodImages[0],
@@ -451,7 +429,7 @@ module.exports = (req, res) => {
         id: liveProd.id,
         path: liveProd.path,
         unique_id: liveProd.salt,
-        name: FULL_NAMES[slug] || liveProd.name,
+        name: liveProd.name,
         description: localAsset.desc,
         meta_title: liveProd.name + " - RiftCheats",
         meta_description: "Information: Windows 10 & 11 Supported, Intel & AMD Processors.",
@@ -521,9 +499,9 @@ module.exports = (req, res) => {
 
       output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
       output = output.replace(/\/storage\/images\/rust\.jpg/g, localAsset.image);
-      output = output.replace(/Crusader R6 Cheat/g, liveProd.name);
-      output = output.replace(/Krush Rust Cheat/g, liveProd.name);
-      output = output.replace(/Ancient Apex Cheat/g, liveProd.name);
+      output = output.replace(/R6 Exodus Lite/g, liveProd.name);
+      output = output.replace(/External Rust/g, liveProd.name);
+      output = output.replace(/Apex Internal/g, liveProd.name);
 
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/html');
