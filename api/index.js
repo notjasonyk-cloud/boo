@@ -217,7 +217,7 @@ const FALLBACK_PRODUCTS = [
       }
     ]
   },
-    {
+      {
     "id": 740845,
     "name": "Verse HWID Spoofer",
     "description": "<p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\"># Requirements:</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- CPU: Intel / AMD</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- OS: Windows 10 / 11</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- USB 8GB</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Windows Re-install</span></p><p class=\"e-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">- Flash BIOS</span></p>",
