@@ -489,6 +489,19 @@ module.exports = (req, res) => {
       output = output.replace(/<meta name="twitter:image" content=".*?"/g, `<meta name="twitter:image" content="${localAsset.image}"`);
 
       const productPattern = /product:\s*\{[\s\S]*?\}\s*,\s*productAddons/g;
+      
+      if (productJson && Array.isArray(productJson.variants)) {
+        productJson.variants = productJson.variants.map(v => {
+          let pName = (v.name || '').toLowerCase();
+          let correctPrice = v.price;
+          if (pName.includes('1 day')) correctPrice = 7.49;
+          else if (pName.includes('7 day')) correctPrice = 29.99;
+          else if (pName.includes('30 day')) correctPrice = 59.99;
+          else if (pName.includes('lifetime') && (slug === 'spoofer' || slug === 'hwid-spoofer' || slug === 'woofer')) correctPrice = 99.99;
+          return { ...v, price: correctPrice };
+        });
+      }
+
       output = output.replace(/product:\s*\{[\s\S]*?\}\s*,\s*productAddons/g, `product: ${JSON.stringify(productJson)}, productAddons`);
       
 
