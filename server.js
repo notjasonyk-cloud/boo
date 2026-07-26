@@ -490,7 +490,7 @@ module.exports = (req, res) => {
 
       const productPattern = /product:\s*\{[\s\S]*?\}\s*,\s*productAddons/g;
       output = output.replace(/product:\s*\{[\s\S]*?\}\s*,\s*productAddons/g, `product: ${JSON.stringify(productJson)}, productAddons`);
-      output = output.replace(/"description":\s*".*?"/g, `"description": ${JSON.stringify(localAsset.desc)}`);
+      
 
       output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
       output = output.replace(/\/storage\/images\/rust\.jpg/g, localAsset.image);
