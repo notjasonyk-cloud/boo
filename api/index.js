@@ -498,6 +498,7 @@ module.exports = (req, res) => {
       output = output.replace(/External Rust/g, liveProd.name);
       output = output.replace(/Apex Internal/g, liveProd.name);
 
+            output = output.replace(/<div class="text-t-primary editor">[\s\S]*?<\/div>\s*<\/div>\s*<\/template>/, `<div class="text-t-primary editor">${localAsset.desc}<\/div><\/div><\/template>`);
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/html');
       res.end(output);
