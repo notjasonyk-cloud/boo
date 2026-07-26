@@ -666,7 +666,7 @@
           <div>
             <template x-if="activeTab == 'description'">
               <div class="p-6 bg-gradient-card backdrop-blur-sm before-border-wh rounded-2xl">
-                <div class="text-t-primary editor" x-html="product.description"></div>
+                <div class="text-t-primary editor" x-html="product?.description || ''"></div>
               </div>
             </template>
             

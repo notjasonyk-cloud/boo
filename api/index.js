@@ -501,7 +501,7 @@ module.exports = (req, res) => {
       output = output.replace(/<meta property="og:image" content=".*?"/g, `<meta property="og:image" content="${localAsset.image}"`);
       output = output.replace(/<meta name="twitter:image" content=".*?"/g, `<meta name="twitter:image" content="${localAsset.image}"`);
 
-      const productPattern = /product:\s*\{"id":774973,[\s\S]*?\}\s*,\s*productAddons/g;
+      const productPattern = /product:\s*\{[\s\S]*?\}\s*,\s*productAddons/g;
       output = output.replace(productPattern, `product: ${JSON.stringify(productJson)}, productAddons`);
 
       output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
