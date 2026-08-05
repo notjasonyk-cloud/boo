@@ -355,7 +355,7 @@
                   <ul class="splide__list">
                     
                       <li class="splide__slide bg-black/5 border border-white/5 rounded-2xl overflow-hidden aspect-product-page-image">
-                        <img src="/storage/images/1008329.webp" class="size-full object-product-image" style="" />
+                        <img :src="product.images && product.images[0] ? product.images[0] : '/storage/images/r6.jpg'" src="/storage/images/r6.jpg" class="size-full object-product-image" />
                       </li>
                     
                   </ul>
