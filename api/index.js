@@ -480,18 +480,29 @@ module.exports = (req, res) => {
         metadata: null
       };
 
+      // Using existing prodImages array
+      if (liveProd && Array.isArray(liveProd.images) && liveProd.images.length > 0) {
+        prodImages = liveProd.images;
+      } else if (liveProd && Array.isArray(liveProd.image_urls) && liveProd.image_urls.length > 0) {
+        prodImages = liveProd.image_urls;
+      } else if (liveProd && liveProd.image_url) {
+        prodImages = [liveProd.image_url];
+      } else {
+        prodImages = [localAsset.image];
+      }
+
       if (productJson) {
-        productJson.images = [localAsset.image];
-        productJson.image_urls = [localAsset.image];
-        productJson.image_url = localAsset.image;
+        productJson.images = prodImages;
+        productJson.image_urls = prodImages;
+        productJson.image_url = prodImages[0];
       }
       let output = data;
 
       output = output.replace(/<title>.*?<\/title>/g, `<title>${liveProd.name} - RiftCheats</title>`);
       output = output.replace(/<meta property="og:title" content=".*?"/g, `<meta property="og:title" content="${liveProd.name}"`);
       output = output.replace(/<meta name="twitter:title" content=".*?"/g, `<meta name="twitter:title" content="${liveProd.name}"`);
-      output = output.replace(/<meta property="og:image" content=".*?"/g, `<meta property="og:image" content="${localAsset.image}"`);
-      output = output.replace(/<meta name="twitter:image" content=".*?"/g, `<meta name="twitter:image" content="${localAsset.image}"`);
+      output = output.replace(/<meta property="og:image" content=".*?"/g, `<meta property="og:image" content="${prodImages[0] || localAsset.image}"`);
+      output = output.replace(/<meta name="twitter:image" content=".*?"/g, `<meta name="twitter:image" content="${prodImages[0] || localAsset.image}"`);
 
       const productPattern = /product:\s*\{[\s\S]*?\}\s*,\s*productAddons/g;
       
@@ -522,10 +533,10 @@ module.exports = (req, res) => {
       output = output.replace(/product:\s*\{[\s\S]*?\}\s*,\s*productAddons/g, `product: ${JSON.stringify(productJson)}, productAddons`);
       
 
-      output = output.replace(/https:\/\/(?:api\.)?sellauth\.com\/storage\/images\/\d+\.webp/g, localAsset.image);
-      output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
-      output = output.replace(/\/storage\/images\/rust\.jpg/g, localAsset.image);
-      output = output.replace(/\/storage\/images\/rust\.jpg/g, localAsset.image);
+      // Preserving live SellAuth CDN images uploaded by user
+      output = output.replace(/\/storage\/images\/1008329\.webp/g, prodImages[0] || localAsset.image);
+      output = output.replace(/\/storage\/images\/rust\.jpg/g, prodImages[0] || localAsset.image);
+      output = output.replace(/\/storage\/images\/rust\.jpg/g, prodImages[0] || localAsset.image);
       output = output.replace(/R6 Exodus Lite/g, liveProd.name);
       output = output.replace(/External Rust/g, liveProd.name);
       output = output.replace(/Apex Internal/g, liveProd.name);
