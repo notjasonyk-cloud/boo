@@ -480,6 +480,7 @@ module.exports = (req, res) => {
         metadata: null
       };
 
+      if (productJson) { productJson.images = [localAsset.image]; }
       let output = data;
 
       output = output.replace(/<title>.*?<\/title>/g, `<title>${liveProd.name} - RiftCheats</title>`);
