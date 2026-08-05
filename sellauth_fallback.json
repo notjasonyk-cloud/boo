@@ -229,17 +229,17 @@
     ],
     "variants": [
       {
-            "id": 1210839,
-            "name": "1 Time",
-            "price": 29.99,
-            "stock": -1
+        "id": 1210839,
+        "name": "1 Time",
+        "price": 29.99,
+        "stock": -1
       },
       {
-            "id": 1210842,
-            "name": "Lifetime",
-            "price": 99.99,
-            "stock": -1
+        "id": 1210842,
+        "name": "Lifetime",
+        "price": 99.99,
+        "stock": -1
       }
-]
+    ]
   }
 ]
