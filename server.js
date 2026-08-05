@@ -480,7 +480,11 @@ module.exports = (req, res) => {
         metadata: null
       };
 
-      if (productJson) { productJson.images = [localAsset.image]; }
+      if (productJson) {
+        productJson.images = [localAsset.image];
+        productJson.image_urls = [localAsset.image];
+        productJson.image_url = localAsset.image;
+      }
       let output = data;
 
       output = output.replace(/<title>.*?<\/title>/g, `<title>${liveProd.name} - RiftCheats</title>`);
@@ -518,7 +522,9 @@ module.exports = (req, res) => {
       output = output.replace(/product:\s*\{[\s\S]*?\}\s*,\s*productAddons/g, `product: ${JSON.stringify(productJson)}, productAddons`);
       
 
+      output = output.replace(/https:\/\/(?:api\.)?sellauth\.com\/storage\/images\/\d+\.webp/g, localAsset.image);
       output = output.replace(/\/storage\/images\/1008329\.webp/g, localAsset.image);
+      output = output.replace(/\/storage\/images\/rust\.jpg/g, localAsset.image);
       output = output.replace(/\/storage\/images\/rust\.jpg/g, localAsset.image);
       output = output.replace(/R6 Exodus Lite/g, liveProd.name);
       output = output.replace(/External Rust/g, liveProd.name);
