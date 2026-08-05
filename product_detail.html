@@ -97,7 +97,19 @@
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet" integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/choices.js@10.2.0/public/assets/styles/choices.min.css" rel="stylesheet" integrity="sha256-gS3HxgWFFFqEo0wQoALebu5XlWdYr3gqd4/Tk5wt8Ig=" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.css" rel="stylesheet" integrity="sha256-qwd4FE0YEnXtN1D9SlLRzgZ35aJTclA5jg1poUQA3dE=" crossorigin="anonymous" />
-  </head>
+  <style>
+  [data-aos] { opacity: 1 !important; transform: none !important; visibility: visible !important; }
+  [data-dsr] { opacity: 1 !important; transform: none !important; visibility: visible !important; }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({ duration: 600, once: true });
+    }
+  });
+</script>
+</head>
   <body class="text-t-primary dSR" style="background-color: rgb(3,7,18);">
     
     
