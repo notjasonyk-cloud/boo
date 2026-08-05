@@ -24,7 +24,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  </head>
+  <style>
+  [data-dsr] { visibility: visible !important; opacity: 1 !important; }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      var els = document.querySelectorAll('[data-dsr]');
+      for (var i = 0; i < els.length; i++) {
+        els[i].style.visibility = 'visible';
+        els[i].style.opacity = '1';
+      }
+    }, 100);
+  });
+</script>
+<style>
+  [data-dsr] { visibility: visible !important; opacity: 1 !important; }
+</style>
+<script>
+  window.addEventListener('load', function() {
+    var dsr = document.querySelectorAll('[data-dsr]');
+    for (var i = 0; i < dsr.length; i++) {
+      dsr[i].style.visibility = 'visible';
+      dsr[i].style.opacity = '1';
+    }
+  });
+</script>
+</head>
   <body class="text-t-primary min-h-screen flex flex-col justify-between" style="background-color: rgb(3,7,18);">
     
     <div id="app" x-data="cartPage">

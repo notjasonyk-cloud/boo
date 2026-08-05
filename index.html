@@ -16,7 +16,7 @@
   <link href="/assets/197035/logo.png?v=2026" rel="icon" type="image/png"/>
   <meta content="#ec4899" name="theme-color"/>
   <style>
-   [data-dsr] { visibility: hidden; }
+   [data-dsr] { visibility: visible !important; opacity: 1 !important; }
   </style>
   <link href="/assets/197035/built.css?v=1770372364948" rel="stylesheet"/>
   <link href="/assets/197035/custom.css?v=1782526667289" rel="stylesheet">
@@ -85,7 +85,19 @@
    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.3/src/lite-yt-embed.css" integrity="sha256-qwd4FE0YEnXtN1D9SlLRzgZ35aJTclA5jg1poUQA3dE=" rel="stylesheet">
    </link>
   </link>
- </head>
+ <style>
+  [data-dsr] { visibility: visible !important; opacity: 1 !important; }
+</style>
+<script>
+  window.addEventListener('load', function() {
+    var dsr = document.querySelectorAll('[data-dsr]');
+    for (var i = 0; i < dsr.length; i++) {
+      dsr[i].style.visibility = 'visible';
+      dsr[i].style.opacity = '1';
+    }
+  });
+</script>
+</head>
  <body class="text-t-primary dSR" style="background-color: rgb(3,7,18);">
   <div class="flex flex-col justify-between min-h-screen relative" id="app" x-data="app">
    <div>
