@@ -50,7 +50,7 @@ const FALLBACK_PRODUCTS = [
       "apex-pro"
     ],
     "images": [
-      "https://api.sellauth.com/storage/images/944495.webp"
+      "/storage/images/apex.png"
     ],
     "variants": [
       {
@@ -490,7 +490,19 @@ module.exports = (req, res) => {
 
       const productPattern = /product:\s*\{[\s\S]*?\}\s*,\s*productAddons/g;
       
-      if (productJson && Array.isArray(productJson.variants)) {
+      if (slug === 'spoofer' || slug === 'hwid-spoofer' || slug === 'woofer' || (productJson && (productJson.path === 'hwid-spoofer' || productJson.path === 'spoofer'))) {
+        productJson.variants = [
+          { id: 1210839, name: '1 Time', price: 29.99, stock: -1 },
+          { id: 1210842, name: 'Lifetime', price: 99.99, stock: -1 }
+        ];
+      } else if (slug === 'fortnite' || slug === 'fortnite-private' || (productJson && (productJson.path === 'fortnite-private' || productJson.path === 'fortnite'))) {
+        productJson.variants = [
+          { id: 1210784, name: '1 Day', price: 7.49, stock: -1 },
+          { id: 1210785, name: '7 Days', price: 29.99, stock: -1 },
+          { id: 1210786, name: '30 Days', price: 59.99, stock: -1 },
+          { id: 1360871, name: 'Lifetime', price: 299.99, stock: -1 }
+        ];
+      } else if (productJson && Array.isArray(productJson.variants)) {
         productJson.variants = productJson.variants.map(v => {
           let pName = (v.name || '').toLowerCase();
           let correctPrice = v.price;
