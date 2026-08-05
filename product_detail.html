@@ -1121,7 +1121,7 @@
         });
       },
 
-      buyNow: async function () {
+                  buyNow: async function () {
         if (this.buyingNow) {
           return;
         }
@@ -1160,11 +1160,9 @@
           formData.email = window.shopCustomer.email;
         }
 
-        
-          if (this.altchaPayload) {
-            formData.altcha = this.altchaPayload;
-          }
-        
+        if (this.altchaPayload) {
+          formData.altcha = this.altchaPayload;
+        }
 
         try {
           this.buyingNow = true;
@@ -1181,12 +1179,12 @@
           const responseData = await response.json();
 
           if (responseData.url) {
-            this.checkoutUrl = responseData.url;
-            let sessionPath = this.checkoutUrl;
-            if (sessionPath.includes('/checkout/')) {
-              sessionPath = sessionPath.substring(sessionPath.indexOf('/checkout/'));
+            let sessionUrl = responseData.url;
+            let sessionId = sessionUrl;
+            if (sessionUrl.includes('/checkout/')) {
+              sessionId = sessionUrl.substring(sessionUrl.indexOf('/checkout/') + 10);
             }
-            window.location.replace(`https://sellauth.com${sessionPath}`);
+            window.location.href = `https://sellauth.com/checkout/${sessionId}`;
           } else {
             this.buyingNow = false;
             this.buyNowError = responseData?.message || 'Error in the AJAX request.';
